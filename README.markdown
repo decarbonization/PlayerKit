@@ -1,10 +1,10 @@
 #Introduction
 
-PlayerKit is a small framework that provides a solid, extendable playback engine for audio players.
+PlayerKit is a small framework that provides a solid, extendable playback engine for audio players. It is used by the <a href="http://github.com/decarbonization/Player">Player</a> application.
 
 #License
 
-Player is released under the terms of the MIT license.
+PlayerKit is released under the terms of the MIT license.
 
     Copyright (c) 2007-2010 Peter MacWhinnie
 
