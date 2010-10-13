@@ -1,0 +1,145 @@
+// !$*UTF8*$!
+{
+	0867D690FE84028FC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeTarget = 8DC2EF4F0486A6940098B216 /* PlayerKit */;
+		addToTargets = (
+			8DC2EF4F0486A6940098B216 /* PlayerKit */,
+		);
+		codeSenseManager = 1EE97A49124D80BC00AA4646 /* Code sense */;
+		perUserDictionary = {
+			PBXPerProjectTemplateStateSaveDate = 308681705;
+			PBXWorkspaceStateSaveDate = 308681705;
+		};
+		sourceControlManager = 1EE97A48124D80BC00AA4646 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	1EE97A48124D80BC00AA4646 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	1EE97A49124D80BC00AA4646 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	1EE97A4A124D80EA00AA4646 /* PKAudioEffect.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 715}}";
+			sepNavSelRange = "{512, 0}";
+			sepNavVisRange = "{0, 962}";
+		};
+	};
+	1EE97A4B124D80EA00AA4646 /* PKAudioEffect.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 2080}}";
+			sepNavSelRange = "{677, 0}";
+			sepNavVisRange = "{907, 1073}";
+			sepNavWindowFrame = "{{38, 181}, {889, 671}}";
+		};
+	};
+	1EE97A4C124D80EA00AA4646 /* PKAudioEffectPrivate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 558}}";
+			sepNavSelRange = "{943, 0}";
+			sepNavVisRange = "{0, 950}";
+			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
+		};
+	};
+	1EE97A4D124D80EA00AA4646 /* PKAudioPlayer.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 2561}}";
+			sepNavSelRange = "{4277, 0}";
+			sepNavVisRange = "{3387, 1098}";
+			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
+		};
+	};
+	1EE97A4E124D80EA00AA4646 /* PKAudioPlayer.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 10894}}";
+			sepNavSelRange = "{13036, 0}";
+			sepNavVisRange = "{12536, 717}";
+			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
+		};
+	};
+	1EE97A4F124D80EA00AA4646 /* PKAudioPlayerEngine.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {720, 15418}}";
+			sepNavSelRange = "{10628, 0}";
+			sepNavVisRange = "{10340, 319}";
+			sepNavWindowFrame = "{{84, 139}, {889, 671}}";
+		};
+	};
+	1EE97A50124D80EA00AA4646 /* PKAudioPlayerEngine.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 5707}}";
+			sepNavSelRange = "{971, 0}";
+			sepNavVisRange = "{13931, 1820}";
+			sepNavWindowFrame = "{{130, 97}, {889, 671}}";
+		};
+	};
+	1EE97A5C124D80EA00AA4646 /* PlayerKit.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 558}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 110}";
+			sepNavWindowFrame = "{{38, 181}, {889, 671}}";
+		};
+	};
+	1EE97A5D124D80EA00AA4646 /* PlayerKitDefines.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 3354}}";
+			sepNavSelRange = "{600, 0}";
+			sepNavVisRange = "{6670, 1660}";
+			sepNavWindowFrame = "{{84, 139}, {889, 671}}";
+		};
+	};
+	1EE97A5E124D80EA00AA4646 /* PlayerKitDefines.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 2678}}";
+			sepNavSelRange = "{5354, 0}";
+			sepNavVisRange = "{0, 1424}";
+			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
+		};
+	};
+	1EE97A61124D80EA00AA4646 /* RBException.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 2418}}";
+			sepNavSelRange = "{4280, 0}";
+			sepNavVisRange = "{3492, 227}";
+		};
+	};
+	1EE97A64124D80EA00AA4646 /* RBLockableObject.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1521}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{1644, 700}";
+			sepNavWindowFrame = "{{153, 76}, {889, 671}}";
+		};
+	};
+	1EE97A66124D80EA00AA4646 /* RBObject.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1716}}";
+			sepNavSelRange = "{913, 0}";
+			sepNavVisRange = "{361, 1121}";
+			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
+		};
+	};
+	32DBCF5E0370ADEE00C91783 /* PlayerKit_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 558}}";
+			sepNavSelRange = "{114, 0}";
+			sepNavVisRange = "{0, 190}";
+			sepNavWindowFrame = "{{38, 181}, {889, 671}}";
+		};
+	};
+	8DC2EF4F0486A6940098B216 /* PlayerKit */ = {
+		activeExec = 0;
+	};
+}
