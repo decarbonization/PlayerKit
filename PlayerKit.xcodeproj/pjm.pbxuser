@@ -8,8 +8,37 @@
 		);
 		codeSenseManager = 1EE97A49124D80BC00AA4646 /* Code sense */;
 		perUserDictionary = {
-			PBXPerProjectTemplateStateSaveDate = 308681705;
-			PBXWorkspaceStateSaveDate = 308681705;
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					238,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 308928475;
+			PBXWorkspaceStateSaveDate = 308928475;
+		};
+		perUserProjectItems = {
+			1EEBF505126A2373002CC6CA /* PBXTextBookmark */ = 1EEBF505126A2373002CC6CA /* PBXTextBookmark */;
+			1EEBF509126A2470002CC6CA /* PBXTextBookmark */ = 1EEBF509126A2470002CC6CA /* PBXTextBookmark */;
+			1EEBF50A126A2470002CC6CA /* PBXTextBookmark */ = 1EEBF50A126A2470002CC6CA /* PBXTextBookmark */;
+			1EEBF50B126A2470002CC6CA /* PBXTextBookmark */ = 1EEBF50B126A2470002CC6CA /* PBXTextBookmark */;
+			1EEBF50C126A2470002CC6CA /* PBXTextBookmark */ = 1EEBF50C126A2470002CC6CA /* PBXTextBookmark */;
 		};
 		sourceControlManager = 1EE97A48124D80BC00AA4646 /* Source Control */;
 		userBuildSettings = {
@@ -29,59 +58,28 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	1EE97A4A124D80EA00AA4646 /* PKAudioEffect.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 715}}";
-			sepNavSelRange = "{512, 0}";
-			sepNavVisRange = "{0, 962}";
-		};
-	};
-	1EE97A4B124D80EA00AA4646 /* PKAudioEffect.mm */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 2080}}";
-			sepNavSelRange = "{677, 0}";
-			sepNavVisRange = "{907, 1073}";
-			sepNavWindowFrame = "{{38, 181}, {889, 671}}";
-		};
-	};
-	1EE97A4C124D80EA00AA4646 /* PKAudioEffectPrivate.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 558}}";
-			sepNavSelRange = "{943, 0}";
-			sepNavVisRange = "{0, 950}";
-			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
-		};
-	};
-	1EE97A4D124D80EA00AA4646 /* PKAudioPlayer.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 2561}}";
-			sepNavSelRange = "{4277, 0}";
-			sepNavVisRange = "{3387, 1098}";
-			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
-		};
-	};
-	1EE97A4E124D80EA00AA4646 /* PKAudioPlayer.mm */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 10894}}";
-			sepNavSelRange = "{13036, 0}";
-			sepNavVisRange = "{12536, 717}";
-			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
-		};
-	};
 	1EE97A4F124D80EA00AA4646 /* PKAudioPlayerEngine.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {720, 15418}}";
-			sepNavSelRange = "{10628, 0}";
-			sepNavVisRange = "{10340, 319}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 15808}}";
+			sepNavSelRange = "{9007, 0}";
+			sepNavVisRange = "{8109, 1253}";
 			sepNavWindowFrame = "{{84, 139}, {889, 671}}";
 		};
 	};
 	1EE97A50124D80EA00AA4646 /* PKAudioPlayerEngine.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {830, 5707}}";
-			sepNavSelRange = "{971, 0}";
-			sepNavVisRange = "{13931, 1820}";
+			sepNavSelRange = "{11416, 0}";
+			sepNavVisRange = "{10870, 1359}";
 			sepNavWindowFrame = "{{130, 97}, {889, 671}}";
+		};
+	};
+	1EE97A55124D80EA00AA4646 /* PKDecoder.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1768}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{2263, 1295}";
+			sepNavWindowFrame = "{{84, 139}, {889, 671}}";
 		};
 	};
 	1EE97A5C124D80EA00AA4646 /* PlayerKit.h */ = {
@@ -95,8 +93,8 @@
 	1EE97A5D124D80EA00AA4646 /* PlayerKitDefines.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {830, 3354}}";
-			sepNavSelRange = "{600, 0}";
-			sepNavVisRange = "{6670, 1660}";
+			sepNavSelRange = "{3103, 0}";
+			sepNavVisRange = "{1627, 1811}";
 			sepNavWindowFrame = "{{84, 139}, {889, 671}}";
 		};
 	};
@@ -118,17 +116,134 @@
 	1EE97A64124D80EA00AA4646 /* RBLockableObject.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {830, 1521}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{1644, 700}";
+			sepNavSelRange = "{1869, 0}";
+			sepNavVisRange = "{1635, 709}";
 			sepNavWindowFrame = "{{153, 76}, {889, 671}}";
 		};
 	};
 	1EE97A66124D80EA00AA4646 /* RBObject.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {830, 1716}}";
-			sepNavSelRange = "{913, 0}";
-			sepNavVisRange = "{361, 1121}";
+			sepNavSelRange = "{1949, 0}";
+			sepNavVisRange = "{1848, 966}";
 			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
+		};
+	};
+	1EEBF2F31269DFEF002CC6CA /* PKAudioPlayer.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1547}}";
+			sepNavSelRange = "{4272, 0}";
+			sepNavVisRange = "{3052, 1739}";
+			sepNavWindowFrame = "{{38, 181}, {889, 671}}";
+		};
+	};
+	1EEBF2F51269E012002CC6CA /* PKAudioPlayerInternal.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 650}}";
+			sepNavSelRange = "{746, 0}";
+			sepNavVisRange = "{155, 1143}";
+			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
+		};
+	};
+	1EEBF2F91269E033002CC6CA /* PKAudioPlayer.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 8294}}";
+			sepNavSelRange = "{340, 0}";
+			sepNavVisRange = "{0, 1266}";
+			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
+		};
+	};
+	1EEBF474126A16E8002CC6CA /* PKAudioEffect.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 858}}";
+			sepNavSelRange = "{1817, 0}";
+			sepNavVisRange = "{1560, 312}";
+		};
+	};
+	1EEBF475126A16E8002CC6CA /* PKAudioEffect.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 2717}}";
+			sepNavSelRange = "{1973, 0}";
+			sepNavVisRange = "{3221, 890}";
+			sepNavWindowFrame = "{{199, 34}, {889, 671}}";
+		};
+	};
+	1EEBF4FB126A236D002CC6CA /* PKGraphicEQEffect.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 558}}";
+			sepNavSelRange = "{252, 0}";
+			sepNavVisRange = "{0, 1228}";
+		};
+	};
+	1EEBF4FC126A236D002CC6CA /* PKGraphicEQEffect.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 572}}";
+			sepNavSelRange = "{291, 0}";
+			sepNavVisRange = "{0, 824}";
+			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
+		};
+	};
+	1EEBF505126A2373002CC6CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1EEBF506126A2373002CC6CA /* AudioUnitParameters.h */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	1EEBF506126A2373002CC6CA /* AudioUnitParameters.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = AudioUnitParameters.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AudioUnit.framework/Versions/A/Headers/AudioUnitParameters.h;
+		sourceTree = "<absolute>";
+	};
+	1EEBF509126A2470002CC6CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1EEBF4FB126A236D002CC6CA /* PKGraphicEQEffect.h */;
+		name = "PKGraphicEQEffect.h: 15";
+		rLen = 0;
+		rLoc = 252;
+		rType = 0;
+		vrLen = 1228;
+		vrLoc = 0;
+	};
+	1EEBF50A126A2470002CC6CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1EEBF4FC126A236D002CC6CA /* PKGraphicEQEffect.cpp */;
+		rLen = 0;
+		rLoc = 9223372036854776441;
+		rType = 0;
+	};
+	1EEBF50B126A2470002CC6CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1EEBF4FC126A236D002CC6CA /* PKGraphicEQEffect.cpp */;
+		name = "PKGraphicEQEffect.cpp: 17";
+		rLen = 0;
+		rLoc = 291;
+		rType = 0;
+		vrLen = 824;
+		vrLoc = 0;
+	};
+	1EEBF50C126A2470002CC6CA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1EEBF50D126A2470002CC6CA /* AudioUnitParameters.h */;
+		name = "AudioUnitParameters.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1076;
+		vrLoc = 10169;
+	};
+	1EEBF50D126A2470002CC6CA /* AudioUnitParameters.h */ = {
+		isa = PBXFileReference;
+		name = AudioUnitParameters.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AudioUnit.framework/Versions/A/Headers/AudioUnitParameters.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 7449}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{10169, 1076}";
+			sepNavWindowFrame = "{{222, 13}, {889, 671}}";
 		};
 	};
 	32DBCF5E0370ADEE00C91783 /* PlayerKit_Prefix.pch */ = {

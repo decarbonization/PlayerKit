@@ -1,193 +1,113 @@
-//
-//  PKAudioPlayer.h
-//  PlayerKit
-//
-//  Created by Peter MacWhinnie on 11/16/08.
-//  Copyright 2008 Roundabout Software. All rights reserved.
-//
-
-//External Dependencies
-#import <Cocoa/Cocoa.h>
-#import <AudioToolbox/AudioToolbox.h> //for AudioConverterRef, AudioBufferList
-#import <objc/message.h> //for Method.
-
-@class PKAudioEffect, PKAvailableAudioEffect;
-@protocol PKAudioPlayerDelegate;
-
-/*!
- @abstract	The PKAudioPlayer class represents the public interface for PlayerKit's decoding and playback functionality.
+/*
+ *  PKAudioPlayer.h
+ *  PlayerKit
+ *
+ *  Created by Peter MacWhinnie on 10/16/10.
+ *  Copyright 2010 __MyCompanyName__. All rights reserved.
+ *
  */
-@interface PKAudioPlayer : NSObject
-{
-	/* owner */	struct PKAudioPlayerEngine *mPlaybackEngine;
-	/* owner */	NSMutableArray *mAudioEffects;
-	
-	/* owner */	struct PKDecoder *mPlaybackDecoder;
-	
-	/* owner */	AudioConverterRef mDecoderDataConverter;
-	/* owner */	AudioBufferList *mDecoderDataConverterBufferList;
-	/* n/a */	Method mPlaybackDecoderFillBufferMethod;
-	
-	/* n/a */	BOOL mIsPlaybackPaused;
-	/* weak */	id < PKAudioPlayerDelegate > mDelegate;
-}
 
+#ifndef PKAudioPlayer_h
+#define PKAudioPlayer_h 1
+
+#import <CoreFoundation/CoreFoundation.h>
+
+#pragma mark Constants
+
+///The notification posted when an audio player encounters an error during playback.
+///The notification is always posted on the main thread. The userInfo dictionary of
+///the notification contains one key, CFSTR("Error"), which contains a CFErrorRef
+///describing the problem. PKAudioPlayer has stopped playback when this notification
+///is posted.
+PK_EXTERN CFStringRef const PKAudioPlayerDidEncounterErrorNotification;
+
+///The notification posted when an audio player finishes playing an audio file.
+///The notification is always posted on the main thread. The userInfo dictionary
+///of the notification contains one key, CFSTR("DidFinish"), which contains a CFBoolean
+///indicating whether or not the audio file was played all the way through.
+PK_EXTERN CFStringRef const PKAudioPlayerDidFinishPlayingNotification;
+
+///The notification posted when an audio player has changed output devices.
+PK_EXTERN CFStringRef const PKAudioPlayerDidChangeOutputDeviceNotification;
+
+#pragma mark -
+#pragma mark Lifecycle
+
+///Initialize the audio player's internal state.
+///	\param	outError	An object encapsulating a description of any errors that occurred. May be null. Must be freed by caller.
+///	\result	true if initialization succeeds; false otherwise.
+PK_EXTERN Boolean PKAudioPlayerInit(CFErrorRef *outError);
+
+///Teardown the audio player's internal state.
+///	\param	outError	An object encapsulating a description of any errors that occurred. May be null. Must be freed by caller.
+///	\result	true if the teardown succeeds; false otherwise.
+PK_EXTERN Boolean PKAudioPlayerTeardown(CFErrorRef *outError);
+
+#pragma mark -
+#pragma mark Controlling Playback
+
+///Set the source file of the audio player.
+///	\param	location	The location of the audio file to play.
+///	\param	outError	An object encapsulating a description of any errors that occurred. May be null. Must be freed by caller.
+///	\result	true if the file located at the passed in URL was loaded successfully; false otherwise.
+PK_EXTERN Boolean PKAudioPlayerSetURL(CFURLRef location, CFErrorRef *outError);
+
+///Returns the URL indicating the location of the source file of the audio player.
+PK_EXTERN CFURLRef PKAudioPlayerCopyURL();
+
+#pragma mark -
+
+///Start playback in the audio player.
+///	\param	outError	An object encapsulating a description of any errors that occurred. May be null. Must be freed by caller.
+///	\result	true if playback could be started; false otherwise.
+PK_EXTERN Boolean PKAudioPlayerPlay(CFErrorRef *outError);
+
+///Stop playback in the audio player.
+///	\param	outError	An object encapsulating a description of any errors that occurred. May be null. Must be freed by caller.
+///	\result	true if playback could be stopped; false otherwise.
+PK_EXTERN Boolean PKAudioPlayerStop(CFErrorRef *outError);
+
+///Returns a Boolean indicating whether or not the audio player is currently playing something.
+PK_EXTERN Boolean PKAudioPlayerIsPlaying();
+
+#pragma mark -
+
+///Pause playback in the audio player.
+///	\param	outError	An object encapsulating a description of any errors that occurred. May be null. Must be freed by caller.
+///	\result	true if playback could be paused; false otherwise.
+PK_EXTERN Boolean PKAudioPlayerPause(CFErrorRef *outError);
+
+///Resume playback after being paused in the audio player.
+///	\param	outError	An object encapsulating a description of any errors that occurred. May be null. Must be freed by caller.
+///	\result	true if playback could be resumed; false otherwise.
+PK_EXTERN Boolean PKAudioPlayerResume(CFErrorRef *outError);
+
+///Returns a Boolean indicating whether or not the audio player is currently paused.
+PK_EXTERN Boolean PKAudioPlayerIsPaused();
+
+#pragma mark -
 #pragma mark Properties
 
-/*!
- @abstract	The delegate of the audio player. @seealso #PKAudioPlayerDelegate PKAudioPlayerDelegate
- */
-@property (assign) id < PKAudioPlayerDelegate > delegate;
+///Set the volume level of the audio player. The scale is {0.0, 1.0}, the default value is 1.0.
+PK_EXTERN Boolean PKAudioPlayerSetVolume(Float32 volume, CFErrorRef *outError);
 
-/*!
- @abstract	The amount of CPU the audio player is using per cycle.
- */
-@property (readonly) float averageCPUUsage;
+///Returns the volume level of the audio player.  The scale is {0.0, 1.0}.
+PK_EXTERN Float32 PKAudioPlayerGetVolume();
 
-/*!
- @abstract	The volume of the audio player.
- */
-@property float volume;
+///Returns the average CPU usage of the audio player.
+PK_EXTERN Float32 PKAudioPlayerGetAverageCPUUsage();
 
 #pragma mark -
 
-/*!
- @abstract	The duration of the audio player's decoder in seconds.
- */
-@property (readonly) NSTimeInterval duration;
-
-/*!
- @abstract	The current location (in seconds) of the receiver's decoder in its data source.
- */
-@property NSTimeInterval currentTime;
-
-#pragma mark -
-#pragma mark Playback Control
-
-/*!
- @abstract		Load a specified resource into the receiver for playback.
- @param			location	The location of the resource to load up for playback. Optional.
- @param			error		An error will be provided upon return if anything goes wrong. Optional.
- @result		YES if the receiver could load the specified resource; NO otherwise.
- @discussion	The built in decoders of PlayerKit only support local resources.
- */
-- (BOOL)setLocation:(NSURL *)location error:(NSError **)error;
-
-/*!
- @abstract	Returns the location of the resource the receiver is currently playing.
- */
-- (NSURL *)location;
+///The duration of the song the audio player is currently playing.
+PK_EXTERN CFTimeInterval PKAudioPlayerGetDuration();
 
 #pragma mark -
 
-/*!
- @abstract		Initiates audio playback.
- @discussion	This method raises an exception upon failure to initiate playback.
-				
-				This method resumes playback if the receiver is paused.
- */
-- (void)play;
+///Sets the location of playback in the song the audio player is playing.
+PK_EXTERN Boolean PKAudioPlayerSetCurrentTime(CFTimeInterval currentTime, CFErrorRef *outError);
 
-/*!
- @abstract		Pauses audio playback.
- @discussion	This method raises an exception upon failure to pause playback.
- */
-- (void)pause;
+///Returns the current location of playback in the song the audio player is playing.
+PK_EXTERN CFTimeInterval PKAudioPlayerGetCurrentTime();
 
-/*!
- @abstract		Terminates audio playback.
- @discussion	This method raises an exception upon failure to initiate playback.
-				
-				This method resets the receiver's pause state.
- */
-- (void)stop;
-
-/*!
- @abstract	Whether or not the audio player is playing.
- */
-- (BOOL)isPlaying;
-
-
-/*!
- @abstract   Indicates whether the receiver is paused.
- */
-- (BOOL)isPaused;
-
-/*!
- @abstract		Pauses audio playback.
- @discussion	This method raises an exception upon failure to pause playback.
- */
-- (void)pause;
-
-/*!
- @abstract		Resumes audio playback.
- @discussion	This method raises an exception upom failure to resume playback.
-				
-				This method will call -[PKAudioPlayer play] if the receiver is not paused.
- */
-- (void)resume;
-
-#pragma mark -
-#pragma mark Effects
-
-/*!
- @abstract	Remove the specified effect from the audio players effect graph.
- */
-- (BOOL)removeEffect:(PKAudioEffect *)effect error:(NSError **)error;
-
-/*!
- @abstract	Remove all effects from the audio graph.
- */
-- (BOOL)removeAllEffects:(NSError **)error;
-
-/*!
- @abstract	The effects in the audio players AUGraph.
- */
-@property (readonly) NSArray *effects;
-
-#if 0
-#pragma mark -
-#pragma mark Effects Loading and Archiving
-
-/*!
- @abstract	Get a serializable representation of the receivers effects.
- */
-- (NSArray *)arrayRepresentationOfEffects;
-
-/*!
- @abstract  Load the effects from an array of effect-dictionaries.
- */
-- (BOOL)loadEffectsFromArrayRepresentation:(NSArray *)effects error:(NSError **)error;
-
-/*!
- @abstract	Replace the current effects with a new set of effects.
- */
-- (BOOL)replaceEffectsWithEffectsArrayRepresentation:(NSArray *)effects error:(NSError **)error;
-#endif
-@end
-
-/*!
- @protocol	PKAudioPlayerDelegate
- @abstract	This delegate describes the required and optional methods
-			used in PKAudioPlayers delegate.
- */
-@protocol PKAudioPlayerDelegate < NSObject >
-@required
-
-/*!
- @abstract		This method is called when an audio player encounters a non-fatal error.
- @discussion	Truly fatal errors are thrown as exceptions. Although errors passed
- to this delegate method are non-fatal, it is very likely they've
- stopped playback.
- */
-- (void)audioPlayer:(PKAudioPlayer *)audioPlayer didEncounterError:(NSError *)error;
-
-@optional
-
-/*!
- @abstract	This method is called when an audio player stops playback.
- @param		audioPlayer	The audio player that called this method
- @param		didFinish	Whether or not playback progressed to the end.
- */
-- (void)audioPlayer:(PKAudioPlayer *)audioPlayer didFinishPlaying:(BOOL)didFinish;
-@end
+#endif /* PKAudioPlayer_h */
