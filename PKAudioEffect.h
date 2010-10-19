@@ -24,7 +24,7 @@ typedef struct PKAudioEffect * PKAudioEffectRef;
 ///Create an audio effect and insert it into the audio player from a specified audio component description.
 PK_EXTERN PKAudioEffectRef PKAudioEffectCreate(AudioComponentDescription description, CFErrorRef *outError);
 
-///Remove an audio effect from the audio player.
+///Remove an audio effect from the audio player. Any references to `effect` are invalid after a call to this function.
 PK_EXTERN Boolean PKAudioEffectRemove(PKAudioEffectRef effect, CFErrorRef *outError);
 
 #pragma mark -

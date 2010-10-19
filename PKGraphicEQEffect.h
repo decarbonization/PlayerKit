@@ -20,10 +20,10 @@ PK_EXTERN PKAudioEffectRef PKGraphicEQEffectCreate(CFErrorRef *outError);
 #pragma mark -
 #pragma mark Properties
 
-///Sets whether or not a graphic EQ effect has 32 bands. If false, it has 12. Default is true.
+///Sets whether or not a graphic EQ effect has 32 bands. If false, it has 10. Default is true.
 PK_EXTERN Boolean PKGraphicEQEffectSetHas32Bands(PKAudioEffectRef effect, Boolean has32Bands, CFErrorRef *outError);
 
-///Returns whether or not a graphic EQ effect has 32 bands. If false, it has 12.
+///Returns whether or not a graphic EQ effect has 32 bands. If false, it has 10.
 PK_EXTERN Boolean PKGraphicEQEffectHas32Bands(PKAudioEffectRef effect);
 
 #pragma mark -
