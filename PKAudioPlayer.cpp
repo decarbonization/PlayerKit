@@ -95,6 +95,18 @@ PK_EXTERN Boolean PKAudioPlayerInit(CFErrorRef *outError)
 			});
 			
 		});
+		
+		AudioPlayerState.engine->SetOutputDeviceDidChangeHandler(^{
+			
+			dispatch_async(dispatch_get_main_queue(), ^{
+				CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), 
+													 PKAudioPlayerDidChangeOutputDeviceNotification, 
+													 NULL, 
+													 NULL, 
+													 true);
+			});
+			
+		});
 	}
 	catch (RBException e)
 	{
@@ -545,6 +557,18 @@ PK_EXTERN Boolean PKAudioPlayerIsPaused()
 
 #pragma mark -
 #pragma mark Properties
+
+PK_EXTERN void PKAudioPlayerSetPausesOnOutputDeviceChanges(Boolean pausesOnOutputDeviceChange)
+{
+	AudioPlayerState.engine->SetPausesOnOutputDeviceChanges(pausesOnOutputDeviceChange);
+}
+
+PK_EXTERN Boolean PKAudioPlayerGetPausesOnOutputDeviceChanges()
+{
+	return AudioPlayerState.engine->GetPausesOnOutputDeviceChanges();
+}
+
+#pragma mark -
 
 PK_EXTERN Boolean PKAudioPlayerSetVolume(Float32 volume, CFErrorRef *outError)
 {

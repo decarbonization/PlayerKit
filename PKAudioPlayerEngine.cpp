@@ -212,7 +212,7 @@ OSStatus PKAudioPlayerEngine::DefaultAudioDeviceDidChangeListenerProc(AudioObjec
 			self->StopGraph();
 			
 			self->PauseProcessing();
-			shouldResumeProcessing = true;
+			shouldResumeProcessing = self->mPausesOnOutputDeviceChanges;
 		}
 		
 		AudioStreamBasicDescription streamFormat = self->GetStreamFormat();
@@ -224,6 +224,9 @@ OSStatus PKAudioPlayerEngine::DefaultAudioDeviceDidChangeListenerProc(AudioObjec
 			
 			self->StartGraph();
 		}
+		
+		if(self->mOutputDeviceDidChangeHandler)
+			self->mOutputDeviceDidChangeHandler();
 	}
 	catch (RBException e)
 	{
@@ -392,7 +395,7 @@ void PKAudioPlayerEngine::SetEndOfPlaybackHandler(EndOfPlaybackHandler handler) 
 {
 	Acquisitor lock(this);
 	
-	if(mErrorHandler)
+	if(mEndOfPlaybackHandler)
 	{
 		Block_release(mEndOfPlaybackHandler);
 		mEndOfPlaybackHandler = NULL;
@@ -408,6 +411,29 @@ PKAudioPlayerEngine::EndOfPlaybackHandler PKAudioPlayerEngine::GetEndOfPlaybackH
 	
 	return mEndOfPlaybackHandler;
 }
+
+void PKAudioPlayerEngine::SetOutputDeviceDidChangeHandler(OutputDeviceDidChangeHandler handler) throw()
+{
+	Acquisitor lock(this);
+	
+	if(mOutputDeviceDidChangeHandler)
+	{
+		Block_release(mOutputDeviceDidChangeHandler);
+		mOutputDeviceDidChangeHandler = NULL;
+	}
+	
+	if(handler)
+		mOutputDeviceDidChangeHandler = Block_copy(handler);
+}
+
+PKAudioPlayerEngine::OutputDeviceDidChangeHandler PKAudioPlayerEngine::GetOutputDeviceDidChangeHandler() const throw()
+{
+	Acquisitor lock(this);
+	
+	return mOutputDeviceDidChangeHandler;
+}
+
+#pragma mark -
 
 void PKAudioPlayerEngine::SetScheduleSliceFunctionHandler(ScheduleSliceFunctionHandler handler) throw()
 {
@@ -435,6 +461,22 @@ void *PKAudioPlayerEngine::GetScheduleSliceFunctionHandlerUserData() const throw
 	Acquisitor lock(this);
 	
 	return mScheduleSliceFunctionHandlerUserData;
+}
+
+#pragma mark -
+
+void PKAudioPlayerEngine::SetPausesOnOutputDeviceChanges(Boolean pausesOnOutputDeviceChanges) throw()
+{
+	Acquisitor lock(this);
+	
+	mPausesOnOutputDeviceChanges = pausesOnOutputDeviceChanges;
+}
+
+bool PKAudioPlayerEngine::GetPausesOnOutputDeviceChanges() const throw()
+{
+	Acquisitor lock(this);
+	
+	return mPausesOnOutputDeviceChanges;
 }
 
 #pragma mark -

@@ -51,6 +51,12 @@ public:
 	
 	/*!
 	 @typedef
+	 @abstract	The prototype an output device did change handler block for PKAudioPlayerEngine should conform to.
+	 */
+	typedef void(^OutputDeviceDidChangeHandler)();
+	
+	/*!
+	 @typedef
 	 @abstract		The prototype a schedule slice handler function for PKAudioPlayerEngine should conform to.
 	 @param			graph			The graph which is requesting the slices to be scheduled.
 	 @param			ioBuffer		The buffer which the function should write its resultant data into.
@@ -84,9 +90,13 @@ private:
 	
 	/* n/a */	AudioStreamBasicDescription mStreamFormat;
 	
+	/* n/a */	bool mPausesOnOutputDeviceChanges;
+	
 	//Callbacks
 	/* owner */	ErrorHandler mErrorHandler;
 	/* owner */	EndOfPlaybackHandler mEndOfPlaybackHandler;
+	/* owner */ OutputDeviceDidChangeHandler mOutputDeviceDidChangeHandler;
+	
 	/* owner */	ScheduleSliceFunctionHandler mScheduleSliceFunctionHandler;
 	/* n/a */	void *mScheduleSliceFunctionHandlerUserData;
 	
@@ -217,6 +227,14 @@ public:
 	Float32 GetAverageCPUUsage() const throw();
 	
 #pragma mark -
+	
+	//! @abstract	Sets whether or not the receiver should pause when its output device is changed. Default is false.
+	void SetPausesOnOutputDeviceChanges(Boolean pausesOnOutputDeviceChanges) throw();
+	
+	//! @abstract	Returns whether or not the receiver will pause when its output device is changed.
+	bool GetPausesOnOutputDeviceChanges() const throw();
+	
+#pragma mark -
 #pragma mark Handlers
 	
 	//! @abstract	Set the error handler used by the receiver.
@@ -230,6 +248,12 @@ public:
 	
 	//! @abstract	Get the end of playback handler used by the receiver.
 	EndOfPlaybackHandler GetEndOfPlaybackHandler() const throw();
+	
+	//! @abstract	Set the end of output device changed handler used by the receiver.
+	void SetOutputDeviceDidChangeHandler(OutputDeviceDidChangeHandler handler) throw();
+	
+	//! @abstract	Get the end of output device changed handler used by the receiver.
+	OutputDeviceDidChangeHandler GetOutputDeviceDidChangeHandler() const throw();
 	
 	
 	//! @abstract	Set the schedule slice function handler used by the receiver.

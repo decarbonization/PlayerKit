@@ -197,49 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>1EEBF4FF126A2373002CC6CA</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>PKGraphicEQEffect.cpp</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>1EEBF500126A2373002CC6CA</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>PKGraphicEQEffect.cpp</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>1EEBF52F126DF2AC002CC6CA</string>
-						<key>history</key>
-						<array>
-							<string>1EEBF523126DF1EC002CC6CA</string>
-							<string>1EEBF524126DF1EC002CC6CA</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {889, 574}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 258 889 615 0 0 1440 878 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -316,13 +274,14 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>25</integer>
-											<integer>22</integer>
+											<integer>15</integer>
+											<integer>13</integer>
+											<integer>12</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 172}, {429, 333}}</string>
+									<string>{{0, 112}, {429, 333}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -484,8 +443,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1EEBF516126DF03C002CC6CA</string>
-				<string>1EEBF517126DF03C002CC6CA</string>
+				<string>1EE9012A126DF83600FD6457</string>
+				<string>1EE9012B126DF83600FD6457</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -523,9 +482,9 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>1EEBF503126A2373002CC6CA</string>
+		<string>1EEBF593126DF7DE002CC6CA</string>
+		<string>1EEBF58D126DF6DC002CC6CA</string>
 		<string>/Users/pjm/Documents/PlayerKit/PlayerKit.xcodeproj</string>
-		<string>1EEBF4FF126A2373002CC6CA</string>
 	</array>
 	<key>WindowString</key>
 	<string>994 459 446 419 0 0 1440 878 </string>
@@ -740,7 +699,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>1EEBF51A126DF03C002CC6CA</string>
+				<string>1EE9012C126DF83600FD6457</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
