@@ -107,6 +107,7 @@ PKAudioPlayerEngine::PKAudioPlayerEngine() throw(RBException) :
 	mErrorHasOccurredDuringProcessing(false),
 	mErrorHandler(NULL),
 	mEndOfPlaybackHandler(NULL),
+	mOutputDeviceDidChangeHandler(NULL),
 	mScheduleSliceFunctionHandler(NULL),
 	mScheduleSliceFunctionHandlerUserData(NULL)
 {
