@@ -392,7 +392,7 @@ public:
 	 @param		inScope			The scope of the property the value is being applied to.
 	 @param		node			The node that this value is being applied to.
 	 */
-	void SetPropertyValue(const void *inData, UInt32 inSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope, AUNode node) throw(RBException);
+	void SetPropertyValue(const void *inData, UInt32 inSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope, AUNode node, AudioUnitElement element = 0) throw(RBException);
 	
 	/*!
 	 @abstract	Copy the value of a property for a node in the receiver's AUGraph.
@@ -402,7 +402,7 @@ public:
 	 @param		inScope			The scope of the property to copy the value from.
 	 @param		node			The node that this value is being copied from.
 	 */
-	void CopyPropertyValue(void **outValue, UInt32 *ioSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope, AUNode node) const throw(RBException);
+	void CopyPropertyValue(void **outValue, UInt32 *ioSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope, AUNode node, AudioUnitElement element = 0) const throw(RBException);
 	
 	/*!
 	 @abstract	Update the value of a parameter for a node in the receiver's AUGraph.

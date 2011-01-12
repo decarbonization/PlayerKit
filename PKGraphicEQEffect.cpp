@@ -13,7 +13,7 @@
 
 #pragma mark Creation
 
-PK_EXTERN PKAudioEffectRef PKGraphicEQEffectCreate(CFErrorRef *outError)
+PK_EXTERN PKGraphicEQEffectRef PKGraphicEQEffectCreate(CFErrorRef *outError)
 {
 	AudioComponentDescription graphicEQDescription = {
 		kAudioUnitType_Effect, 
@@ -27,7 +27,7 @@ PK_EXTERN PKAudioEffectRef PKGraphicEQEffectCreate(CFErrorRef *outError)
 #pragma mark -
 #pragma mark Properties
 
-PK_EXTERN Boolean PKGraphicEQEffectSetHas32Bands(PKAudioEffectRef effect, Boolean has32Bands, CFErrorRef *outError)
+PK_EXTERN Boolean PKGraphicEQEffectSetHas32Bands(PKGraphicEQEffectRef effect, Boolean has32Bands, CFErrorRef *outError)
 {
 	OSStatus error = PKAudioEffectSetParameter(effect, 
 											   has32Bands? 32 : 10, 
@@ -47,7 +47,7 @@ PK_EXTERN Boolean PKGraphicEQEffectSetHas32Bands(PKAudioEffectRef effect, Boolea
 	return true;
 }
 
-PK_EXTERN Boolean PKGraphicEQEffectHas32Bands(PKAudioEffectRef effect)
+PK_EXTERN Boolean PKGraphicEQEffectHas32Bands(PKGraphicEQEffectRef effect)
 {
 	AudioUnitParameterValue numberOfBands = 0;
 	if(PKAudioEffectCopyParameter(effect, 
@@ -63,7 +63,7 @@ PK_EXTERN Boolean PKGraphicEQEffectHas32Bands(PKAudioEffectRef effect)
 
 #pragma mark -
 
-PK_EXTERN Boolean PKGraphicEQEffectSetValueOfBand(PKAudioEffectRef effect, CFIndex bandIndex, AudioUnitParameterValue bandValue, CFErrorRef *outError)
+PK_EXTERN Boolean PKGraphicEQEffectSetValueOfBand(PKGraphicEQEffectRef effect, CFIndex bandIndex, AudioUnitParameterValue bandValue, CFErrorRef *outError)
 {
 	UInt32 numberOfBands = PKGraphicEQEffectHas32Bands(effect)? 32 : 10;
 	
@@ -93,7 +93,7 @@ PK_EXTERN Boolean PKGraphicEQEffectSetValueOfBand(PKAudioEffectRef effect, CFInd
 	return true;
 }
 
-PK_EXTERN AudioUnitParameterValue PKGraphicEQEffectGetValueOfBand(PKAudioEffectRef effect, CFIndex bandIndex)
+PK_EXTERN AudioUnitParameterValue PKGraphicEQEffectGetValueOfBand(PKGraphicEQEffectRef effect, CFIndex bandIndex)
 {
 	AudioUnitParameterValue value = 0.0;
 	OSStatus error = PKAudioEffectCopyParameter(effect, &value, bandIndex, kAudioUnitScope_Global);

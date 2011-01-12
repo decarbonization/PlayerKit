@@ -1012,22 +1012,22 @@ AudioStreamBasicDescription PKAudioPlayerEngine::GetStreamFormat() const
 
 #pragma mark -
 
-void PKAudioPlayerEngine::SetPropertyValue(const void *inData, UInt32 inSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope, AUNode node) throw(RBException)
+void PKAudioPlayerEngine::SetPropertyValue(const void *inData, UInt32 inSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope, AUNode node, AudioUnitElement element) throw(RBException)
 {
 	AudioUnit audioUnit = GetAudioUnitForNode(node);
 	OSStatus error = AudioUnitSetProperty(audioUnit, 
 										  inPropertyID, 
 										  inScope, 
-										  0, 
+										  element, 
 										  inData? inData : NULL, 
 										  inData? inSize : 0);
 	RBAssertNoErr(error, CFSTR("AudioUnitSetParameter failed. Error: %d."), error);
 }
 
-void PKAudioPlayerEngine::CopyPropertyValue(void **outValue, UInt32 *ioSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope, AUNode node) const throw(RBException)
+void PKAudioPlayerEngine::CopyPropertyValue(void **outValue, UInt32 *ioSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope, AUNode node, AudioUnitElement element) const throw(RBException)
 {
 	AudioUnit audioUnit = GetAudioUnitForNode(node);
-	OSStatus error = AudioUnitGetProperty(audioUnit, inPropertyID, inScope, 0, outValue, ioSize);
+	OSStatus error = AudioUnitGetProperty(audioUnit, inPropertyID, inScope, element, outValue, ioSize);
 	RBAssertNoErr(error, CFSTR("AudioUnitGetProperty failed. Error: %d."), error);
 }
 

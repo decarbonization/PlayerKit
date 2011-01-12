@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E41934E12DE381F007038D2 /* PKMatrixReverbEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E41934C12DE381F007038D2 /* PKMatrixReverbEffect.h */; };
+		1E41934F12DE381F007038D2 /* PKMatrixReverbEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E41934D12DE381F007038D2 /* PKMatrixReverbEffect.cpp */; };
 		1EE97A6C124D80EA00AA4646 /* PKAudioPlayerEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A4F124D80EA00AA4646 /* PKAudioPlayerEngine.cpp */; };
 		1EE97A6D124D80EA00AA4646 /* PKAudioPlayerEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A50124D80EA00AA4646 /* PKAudioPlayerEngine.h */; };
 		1EE97A6E124D80EA00AA4646 /* PKAudioPlayerPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A51124D80EA00AA4646 /* PKAudioPlayerPrivate.h */; };
@@ -59,6 +61,8 @@
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		1E41934C12DE381F007038D2 /* PKMatrixReverbEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKMatrixReverbEffect.h; sourceTree = "<group>"; };
+		1E41934D12DE381F007038D2 /* PKMatrixReverbEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PKMatrixReverbEffect.cpp; sourceTree = "<group>"; };
 		1EE97A4F124D80EA00AA4646 /* PKAudioPlayerEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PKAudioPlayerEngine.cpp; sourceTree = "<group>"; };
 		1EE97A50124D80EA00AA4646 /* PKAudioPlayerEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKAudioPlayerEngine.h; sourceTree = "<group>"; };
 		1EE97A51124D80EA00AA4646 /* PKAudioPlayerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKAudioPlayerPrivate.h; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 				1EEBF475126A16E8002CC6CA /* PKAudioEffect.cpp */,
 				1EEBF4FB126A236D002CC6CA /* PKGraphicEQEffect.h */,
 				1EEBF4FC126A236D002CC6CA /* PKGraphicEQEffect.cpp */,
+				1E41934C12DE381F007038D2 /* PKMatrixReverbEffect.h */,
+				1E41934D12DE381F007038D2 /* PKMatrixReverbEffect.cpp */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 				1EEBF2F61269E012002CC6CA /* PKAudioPlayerInternal.h in Headers */,
 				1EEBF476126A16E8002CC6CA /* PKAudioEffect.h in Headers */,
 				1EEBF4FD126A236D002CC6CA /* PKGraphicEQEffect.h in Headers */,
+				1E41934E12DE381F007038D2 /* PKMatrixReverbEffect.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +405,7 @@
 				1EEBF2FA1269E033002CC6CA /* PKAudioPlayer.cpp in Sources */,
 				1EEBF477126A16E8002CC6CA /* PKAudioEffect.cpp in Sources */,
 				1EEBF4FE126A236D002CC6CA /* PKGraphicEQEffect.cpp in Sources */,
+				1E41934F12DE381F007038D2 /* PKMatrixReverbEffect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

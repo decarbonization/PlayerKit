@@ -95,7 +95,8 @@ PK_EXTERN Boolean PKAudioEffectSetClassInfo(PKAudioEffectRef effect, CFPropertyL
 												  &classInfo, 
 												  sizeof(classInfo), 
 												  kAudioUnitProperty_ClassInfo, 
-												  kAudioUnitScope_Global);
+												  kAudioUnitScope_Global,
+												  0);
 		if(error != noErr)
 		{
 			if(outError) *outError = PKCopyError(PKEffectsErrorDomain, 
@@ -120,7 +121,7 @@ PK_EXTERN CFPropertyListRef PKAudioEffectCopyClassInfo(PKAudioEffectRef effect)
 {
 	CFPropertyListRef classInfo = NULL;
 	UInt32 classInfoSize = sizeof(classInfo);
-	if(PKAudioEffectCopyProperty(effect, (void **)&classInfo, &classInfoSize, kAudioUnitProperty_ClassInfo, kAudioUnitScope_Global) == noErr)
+	if(PKAudioEffectCopyProperty(effect, (void **)&classInfo, &classInfoSize, kAudioUnitProperty_ClassInfo, kAudioUnitScope_Global, 0) == noErr)
 		return classInfo;
 	
 	return NULL;
@@ -129,14 +130,14 @@ PK_EXTERN CFPropertyListRef PKAudioEffectCopyClassInfo(PKAudioEffectRef effect)
 #pragma mark -
 #pragma mark Audio Unit Properties
 
-PK_EXTERN OSStatus PKAudioEffectSetProperty(PKAudioEffectRef effect, const void *inData, UInt32 inSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope)
+PK_EXTERN OSStatus PKAudioEffectSetProperty(PKAudioEffectRef effect, const void *inData, UInt32 inSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope, AudioUnitElement element)
 {
 	if(!effect)
 		return -50 /* paramErr */;
 	
 	try
 	{
-		effect->engine->SetPropertyValue(inData, inSize, inPropertyID, inScope, effect->node);
+		effect->engine->SetPropertyValue(inData, inSize, inPropertyID, inScope, effect->node, element);
 	}
 	catch (RBException e)
 	{
@@ -146,14 +147,14 @@ PK_EXTERN OSStatus PKAudioEffectSetProperty(PKAudioEffectRef effect, const void 
 	return noErr;
 }
 
-PK_EXTERN OSStatus PKAudioEffectCopyProperty(PKAudioEffectRef effect, void **outValue, UInt32 *ioSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope)
+PK_EXTERN OSStatus PKAudioEffectCopyProperty(PKAudioEffectRef effect, void **outValue, UInt32 *ioSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope, AudioUnitElement element)
 {
 	if(!effect)
 		return -50 /* paramErr */;
 	
 	try
 	{
-		effect->engine->CopyPropertyValue(outValue, ioSize, inPropertyID, inScope, effect->node);
+		effect->engine->CopyPropertyValue(outValue, ioSize, inPropertyID, inScope, effect->node, element);
 	}
 	catch (RBException e)
 	{
@@ -198,4 +199,12 @@ PK_EXTERN OSStatus PKAudioEffectCopyParameter(PKAudioEffectRef effect, AudioUnit
 	}
 	
 	return noErr;
+}
+
+#pragma mark -
+
+PK_EXTERN OSStatus PKAudioEffectCopyParameterInfo(PKAudioEffectRef effect, AudioUnitParameterID inPropertyID, AudioUnitParameterInfo *outInfo)
+{
+	UInt32 outInfoSize = sizeof(*outInfo);
+	return PKAudioEffectCopyProperty(effect, (void **)outInfo, &outInfoSize, kAudioUnitProperty_ParameterInfo, kAudioUnitScope_Global, inPropertyID);
 }

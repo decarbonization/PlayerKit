@@ -275,14 +275,13 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>14</integer>
-											<integer>13</integer>
-											<integer>12</integer>
+											<integer>31</integer>
+											<integer>27</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 147}, {429, 333}}</string>
+									<string>{{0, 257}, {429, 333}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -344,7 +343,6 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>1</integer>
 											<integer>0</integer>
 										</array>
 									</array>
@@ -444,8 +442,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1E12E648127A62D8005D0D3D</string>
-				<string>1E12E649127A62D8005D0D3D</string>
+				<string>1E41936912DE3C5F007038D2</string>
+				<string>1E41936A12DE3C5F007038D2</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -482,9 +480,11 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1E12E64B127A62D8005D0D3D</string>
+		<string>1E41936C12DE3C5F007038D2</string>
+		<string>1E41936D12DE3C5F007038D2</string>
+		<string>1E41936E12DE3C5F007038D2</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>/Users/pjm/Documents/PlayerKit/PlayerKit.xcodeproj</string>
+		<string>/Users/pjm/Documents/Projects/PlayerKit/PlayerKit.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>994 459 446 419 0 0 1440 878 </string>
@@ -699,7 +699,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>1E12E64A127A62D8005D0D3D</string>
+				<string>1E41936B12DE3C5F007038D2</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

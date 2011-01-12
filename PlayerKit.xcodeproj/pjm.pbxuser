@@ -32,11 +32,26 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 310010563;
-			PBXWorkspaceStateSaveDate = 310010563;
+			PBXPerProjectTemplateStateSaveDate = 316553235;
+			PBXWorkspaceStateSaveDate = 316553235;
 		};
 		sourceControlManager = 1EE97A48124D80BC00AA4646 /* Source Control */;
 		userBuildSettings = {
+		};
+	};
+	1E41934C12DE381F007038D2 /* PKMatrixReverbEffect.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {914, 1125}}";
+			sepNavSelRange = "{4191, 0}";
+			sepNavVisRange = "{260, 2458}";
+			sepNavWindowFrame = "{{387, 90}, {973, 709}}";
+		};
+	};
+	1E41934D12DE381F007038D2 /* PKMatrixReverbEffect.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {914, 690}}";
+			sepNavSelRange = "{193, 1}";
+			sepNavVisRange = "{152, 1933}";
 		};
 	};
 	1EE97A48124D80BC00AA4646 /* Source Control */ = {
@@ -55,17 +70,17 @@
 	};
 	1EE97A4F124D80EA00AA4646 /* PKAudioPlayerEngine.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 15665}}";
-			sepNavSelRange = "{2926, 0}";
-			sepNavVisRange = "{2486, 1926}";
-			sepNavWindowFrame = "{{84, 139}, {889, 671}}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 18045}}";
+			sepNavSelRange = "{31485, 0}";
+			sepNavVisRange = "{30999, 1664}";
+			sepNavWindowFrame = "{{130, 97}, {889, 671}}";
 		};
 	};
 	1EE97A50124D80EA00AA4646 /* PKAudioPlayerEngine.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 6214}}";
-			sepNavSelRange = "{7332, 0}";
-			sepNavVisRange = "{7119, 1312}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 6960}}";
+			sepNavSelRange = "{14015, 0}";
+			sepNavVisRange = "{13168, 2039}";
 			sepNavWindowFrame = "{{130, 97}, {889, 671}}";
 		};
 	};
@@ -158,9 +173,9 @@
 	};
 	1EEBF2F31269DFEF002CC6CA /* PKAudioPlayer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 1586}}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1875}}";
 			sepNavSelRange = "{3435, 0}";
-			sepNavVisRange = "{3208, 1700}";
+			sepNavVisRange = "{3208, 1563}";
 			sepNavWindowFrame = "{{38, 181}, {889, 671}}";
 		};
 	};
@@ -182,33 +197,33 @@
 	};
 	1EEBF474126A16E8002CC6CA /* PKAudioEffect.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 975}}";
-			sepNavSelRange = "{793, 0}";
-			sepNavVisRange = "{0, 1302}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1500}}";
+			sepNavSelRange = "{4119, 0}";
+			sepNavVisRange = "{2489, 1662}";
 			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
 		};
 	};
 	1EEBF475126A16E8002CC6CA /* PKAudioEffect.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 2717}}";
-			sepNavSelRange = "{1973, 0}";
-			sepNavVisRange = "{443, 703}";
-			sepNavWindowFrame = "{{199, 34}, {889, 671}}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 3300}}";
+			sepNavSelRange = "{4360, 0}";
+			sepNavVisRange = "{3717, 835}";
+			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
 		};
 	};
 	1EEBF4FB126A236D002CC6CA /* PKGraphicEQEffect.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 558}}";
-			sepNavSelRange = "{252, 0}";
-			sepNavVisRange = "{0, 1228}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 645}}";
+			sepNavSelRange = "{954, 0}";
+			sepNavVisRange = "{89, 1315}";
 			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
 		};
 	};
 	1EEBF4FC126A236D002CC6CA /* PKGraphicEQEffect.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 1443}}";
-			sepNavSelRange = "{2, 0}";
-			sepNavVisRange = "{0, 1120}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1680}}";
+			sepNavSelRange = "{2839, 0}";
+			sepNavVisRange = "{1796, 1043}";
 			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
 		};
 	};
