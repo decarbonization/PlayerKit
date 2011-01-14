@@ -275,7 +275,7 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>31</integer>
+											<integer>32</integer>
 											<integer>27</integer>
 											<integer>0</integer>
 										</array>
@@ -442,8 +442,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1E41936912DE3C5F007038D2</string>
-				<string>1E41936A12DE3C5F007038D2</string>
+				<string>1E41956F12DFE4FD007038D2</string>
+				<string>1E41957012DFE4FD007038D2</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -480,9 +480,6 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1E41936C12DE3C5F007038D2</string>
-		<string>1E41936D12DE3C5F007038D2</string>
-		<string>1E41936E12DE3C5F007038D2</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>/Users/pjm/Documents/Projects/PlayerKit/PlayerKit.xcodeproj</string>
 	</array>
@@ -699,7 +696,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>1E41936B12DE3C5F007038D2</string>
+				<string>1E41957112DFE4FD007038D2</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E41934E12DE381F007038D2 /* PKMatrixReverbEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E41934C12DE381F007038D2 /* PKMatrixReverbEffect.h */; };
+		1E41934E12DE381F007038D2 /* PKMatrixReverbEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E41934C12DE381F007038D2 /* PKMatrixReverbEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E41934F12DE381F007038D2 /* PKMatrixReverbEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E41934D12DE381F007038D2 /* PKMatrixReverbEffect.cpp */; };
 		1EE97A6C124D80EA00AA4646 /* PKAudioPlayerEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A4F124D80EA00AA4646 /* PKAudioPlayerEngine.cpp */; };
 		1EE97A6D124D80EA00AA4646 /* PKAudioPlayerEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A50124D80EA00AA4646 /* PKAudioPlayerEngine.h */; };

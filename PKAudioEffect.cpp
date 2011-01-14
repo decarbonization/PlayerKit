@@ -128,6 +128,44 @@ PK_EXTERN CFPropertyListRef PKAudioEffectCopyClassInfo(PKAudioEffectRef effect)
 }
 
 #pragma mark -
+
+PK_EXTERN Boolean PKAudioEffectSetEnabled(PKAudioEffectRef effect, Boolean enabled, CFErrorRef *outError)
+{
+	UInt32 bypass = !enabled;
+	OSStatus error = PKAudioEffectSetProperty(effect, 
+											  &bypass, 
+											  sizeof(bypass), 
+											  kAudioUnitProperty_BypassEffect, 
+											  kAudioUnitScope_Global, 
+											  0);
+	if(error != noErr)
+	{
+		if(outError) *outError = PKCopyError(PKEffectsErrorDomain, 
+											 error, 
+											 NULL, 
+											 CFSTR("Could not set enabled. Error code %ld."), error);
+		
+		return false;
+	}
+	
+	return true;
+}
+
+PK_EXTERN Boolean PKAudioEffectIsEnabled(PKAudioEffectRef effect)
+{
+	UInt32 enabled = 0;
+	UInt32 enabledSize = sizeof(enabled);
+	PKAudioEffectCopyProperty(effect, 
+							  (void **)&enabled, 
+							  &enabledSize, 
+							  kAudioUnitProperty_BypassEffect, 
+							  kAudioUnitScope_Global, 
+							  0);
+	
+	return enabled;
+}
+
+#pragma mark -
 #pragma mark Audio Unit Properties
 
 PK_EXTERN OSStatus PKAudioEffectSetProperty(PKAudioEffectRef effect, const void *inData, UInt32 inSize, AudioUnitPropertyID inPropertyID, AudioUnitScope inScope, AudioUnitElement element)

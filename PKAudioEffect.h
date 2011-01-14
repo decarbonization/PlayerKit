@@ -42,6 +42,14 @@ PK_EXTERN Boolean PKAudioEffectSetClassInfo(PKAudioEffectRef effect, CFPropertyL
 PK_EXTERN CFPropertyListRef PKAudioEffectCopyClassInfo(PKAudioEffectRef effect);
 
 #pragma mark -
+
+///Sets whether or not an audio effect is enabled.
+PK_EXTERN Boolean PKAudioEffectSetEnabled(PKAudioEffectRef effect, Boolean enabled, CFErrorRef *outError);
+
+///Returns whether or not an audio effect is enabled.
+PK_EXTERN Boolean PKAudioEffectIsEnabled(PKAudioEffectRef effect);
+
+#pragma mark -
 #pragma mark Audio Unit Properties
 
 ///Set a property on the effect's represented audio unit.

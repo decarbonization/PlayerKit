@@ -36,6 +36,7 @@ PKAUDIOEFFECT_SYNTHESIZE_PARAMETER(MatrixReverb, LargeDelay, kReverbParam_LargeD
 PKAUDIOEFFECT_SYNTHESIZE_PARAMETER(MatrixReverb, SmallDensity, kReverbParam_SmallDensity);
 PKAUDIOEFFECT_SYNTHESIZE_PARAMETER(MatrixReverb, LargeDensity, kReverbParam_LargeDensity);
 PKAUDIOEFFECT_SYNTHESIZE_PARAMETER(MatrixReverb, LargeDelayRange, kReverbParam_LargeDelayRange);
+PKAUDIOEFFECT_SYNTHESIZE_PARAMETER(MatrixReverb, SmallBrightness, kReverbParam_SmallBrightness);
 PKAUDIOEFFECT_SYNTHESIZE_PARAMETER(MatrixReverb, LargeBrightness, kReverbParam_LargeBrightness);
 PKAUDIOEFFECT_SYNTHESIZE_PARAMETER(MatrixReverb, SmallDelayRange, kReverbParam_SmallDelayRange);
 PKAUDIOEFFECT_SYNTHESIZE_PARAMETER(MatrixReverb, ModulationRate, kReverbParam_ModulationRate);
