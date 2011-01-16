@@ -12,7 +12,7 @@
 
 #import <PlayerKit/PKAudioEffect.h>
 
-///The opaque type used to represent PKGraphicEQEffectRef. Typed alias for PKAudioEffectRef.
+///The opaque type used to represent PKGraphicEQEffect. Typed alias for PKAudioEffectRef.
 typedef PKAudioEffectRef PKGraphicEQEffectRef;
 
 #pragma mark -

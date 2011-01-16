@@ -9,6 +9,7 @@
 
 #include "PKGraphicEQEffect.h"
 #include "CAComponentDescription.h"
+#include "CoreAudioErrors.h"
 #include <iostream>
 
 #pragma mark Creation
@@ -39,7 +40,7 @@ PK_EXTERN Boolean PKGraphicEQEffectSetHas32Bands(PKGraphicEQEffectRef effect, Bo
 		if(outError) *outError = PKCopyError(PKEffectsErrorDomain, 
 											 error, 
 											 NULL, 
-											 CFSTR("Could not modify number of bands of effect. Error code %d."), error);
+											 CFSTR("Could not modify number of bands of effect. Error %@ (%d)."), CoreAudioGetErrorName(error), error);
 		
 		return false;
 	}
@@ -86,7 +87,7 @@ PK_EXTERN Boolean PKGraphicEQEffectSetValueOfBand(PKGraphicEQEffectRef effect, C
 		if(outError) *outError = PKCopyError(PKEffectsErrorDomain, 
 											 error, 
 											 NULL, 
-											 CFSTR("Could not set band %ld, error code %d."), bandIndex, error);
+											 CFSTR("Could not set band %ld, Error %@ (%d)."), CoreAudioGetErrorName(error), error);
 		return false;
 	}
 	

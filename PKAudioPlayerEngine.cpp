@@ -213,7 +213,7 @@ OSStatus PKAudioPlayerEngine::DefaultAudioDeviceDidChangeListenerProc(AudioObjec
 			self->StopGraph();
 			
 			self->PauseProcessing();
-			shouldResumeProcessing = self->mPausesOnOutputDeviceChanges;
+			shouldResumeProcessing = !self->mPausesOnOutputDeviceChanges;
 		}
 		
 		AudioStreamBasicDescription streamFormat = self->GetStreamFormat();
