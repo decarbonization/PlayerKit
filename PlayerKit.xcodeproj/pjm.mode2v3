@@ -270,18 +270,21 @@
 										<string>1EEBF478126A16EF002CC6CA</string>
 										<string>1EE62F85126609CD00A69141</string>
 										<string>1EE62F84126609B700A69141</string>
-										<string>08FB77AEFE84172EC02AAC07</string>
+										<string>32C88DFF0371C24200C91783</string>
+										<string>0867D69AFE84028FC02AAC07</string>
+										<string>034768DFFF38A50411DB9C8B</string>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>39</integer>
-											<integer>29</integer>
+											<integer>17</integer>
+											<integer>15</integer>
+											<integer>14</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 405}, {429, 333}}</string>
+									<string>{{0, 55}, {429, 333}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -442,8 +445,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1E41973212E3514C007038D2</string>
-				<string>1E41973312E3514C007038D2</string>
+				<string>1E42943012EDF8370004DFC2</string>
+				<string>1E42943112EDF8370004DFC2</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -480,7 +483,8 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1E41973412E3514C007038D2</string>
+		<string>1E42949E12EDFC200004DFC2</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>/Users/pjm/Documents/Projects/PlayerKit/PlayerKit.xcodeproj</string>
 	</array>
@@ -641,7 +645,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreAudioErrors.cpp</string>
+								<string>PKTaskQueue.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -699,7 +703,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>1E41971D12E34FAC007038D2</string>
+				<string>1E42942412EDF7AB0004DFC2</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -895,8 +899,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>1EEBF3B3126A0DB2002CC6CA</string>
-				<string>1EEBF3B4126A0DB2002CC6CA</string>
+				<string>1E42942712EDF7AB0004DFC2</string>
+				<string>1E42942812EDF7AB0004DFC2</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>

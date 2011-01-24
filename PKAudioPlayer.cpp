@@ -354,7 +354,7 @@ PK_EXTERN Boolean PKAudioPlayerSetDecoder(PKDecoder *decoder, CFErrorRef *outErr
 				
 				CFURLRef decoderLocation = decoder->CopyLocation();
 				*outError = PKCopyError(PKPlaybackErrorDomain, 
-										kPNPlaybackErrorIncompatibleStreamFormat, 
+										kPKPlaybackErrorIncompatibleStreamFormat, 
 										userInfo, 
 										CFSTR("The stream format of the file %@ cannot be decoded."), decoderLocation);
 				CFRelease(decoderLocation);

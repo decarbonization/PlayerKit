@@ -9,7 +9,14 @@
 
 #include "PKTaskQueue.h"
 #include "CAPThread.h"
-#include <objc/objc-auto.h>
+#include <dlfcn.h>
+
+//We load the objc_[un]registerThreadWithCollector functions at runtime
+//so we don't have to link the objc runtime in PlayerKit.
+typedef void(*ObjCGarbageCollectorProc)();
+
+static ObjCGarbageCollectorProc objc_registerThreadWithCollector = (ObjCGarbageCollectorProc)dlsym(RTLD_DEFAULT, "objc_registerThreadWithCollector");
+static ObjCGarbageCollectorProc objc_unregisterThreadWithCollector = (ObjCGarbageCollectorProc)dlsym(RTLD_DEFAULT, "objc_unregisterThreadWithCollector");
 
 #pragma mark PKTaskQueue
 
@@ -80,7 +87,7 @@ void PKTaskQueue::StopProcessingThread()
 
 void *PKTaskQueue::ProcessingThreadCallback(PKTaskQueue *self)
 {
-	objc_registerThreadWithCollector();
+	if(objc_registerThreadWithCollector) objc_registerThreadWithCollector();
 	
 	self->Retain();
 	
@@ -123,7 +130,7 @@ void *PKTaskQueue::ProcessingThreadCallback(PKTaskQueue *self)
 	self->mProcessingThread = NULL;
 	self->Release();
 	
-	objc_unregisterThreadWithCollector();
+	if(objc_unregisterThreadWithCollector) objc_unregisterThreadWithCollector();
 	
 	return NULL;
 }

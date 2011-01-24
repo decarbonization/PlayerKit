@@ -15,9 +15,10 @@
 		1E41960B12E12E3E007038D2 /* PKPitchEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E41960912E12E3E007038D2 /* PKPitchEffect.cpp */; };
 		1E41970E12E34ECD007038D2 /* CoreAudioErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E41970C12E34ECD007038D2 /* CoreAudioErrors.h */; };
 		1E41970F12E34ECD007038D2 /* CoreAudioErrors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E41970D12E34ECD007038D2 /* CoreAudioErrors.cpp */; };
+		1E42945D12EDF91D0004DFC2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E42945C12EDF91D0004DFC2 /* CoreFoundation.framework */; };
+		1E42945F12EDF91D0004DFC2 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E42945E12EDF91D0004DFC2 /* CoreServices.framework */; };
 		1EE97A6C124D80EA00AA4646 /* PKAudioPlayerEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A4F124D80EA00AA4646 /* PKAudioPlayerEngine.cpp */; };
 		1EE97A6D124D80EA00AA4646 /* PKAudioPlayerEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A50124D80EA00AA4646 /* PKAudioPlayerEngine.h */; };
-		1EE97A6E124D80EA00AA4646 /* PKAudioPlayerPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A51124D80EA00AA4646 /* PKAudioPlayerPrivate.h */; };
 		1EE97A6F124D80EA00AA4646 /* PKCoreAudioDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A52124D80EA00AA4646 /* PKCoreAudioDecoder.cpp */; };
 		1EE97A70124D80EA00AA4646 /* PKCoreAudioDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A53124D80EA00AA4646 /* PKCoreAudioDecoder.h */; };
 		1EE97A71124D80EA00AA4646 /* PKDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A54124D80EA00AA4646 /* PKDecoder.cpp */; };
@@ -28,11 +29,11 @@
 		1EE97A78124D80EA00AA4646 /* PKTaskQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A5B124D80EA00AA4646 /* PKTaskQueue.h */; };
 		1EE97A79124D80EA00AA4646 /* PlayerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A5C124D80EA00AA4646 /* PlayerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EE97A7A124D80EA00AA4646 /* PlayerKitDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A5D124D80EA00AA4646 /* PlayerKitDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EE97A7B124D80EA00AA4646 /* PlayerKitDefines.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A5E124D80EA00AA4646 /* PlayerKitDefines.mm */; };
+		1EE97A7B124D80EA00AA4646 /* PlayerKitDefines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A5E124D80EA00AA4646 /* PlayerKitDefines.cpp */; };
 		1EE97A7C124D80EA00AA4646 /* RBAtomic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A5F124D80EA00AA4646 /* RBAtomic.cpp */; };
 		1EE97A7D124D80EA00AA4646 /* RBAtomic.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A60124D80EA00AA4646 /* RBAtomic.h */; };
 		1EE97A7E124D80EA00AA4646 /* RBException.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A61124D80EA00AA4646 /* RBException.h */; };
-		1EE97A7F124D80EA00AA4646 /* RBException.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A62124D80EA00AA4646 /* RBException.mm */; };
+		1EE97A7F124D80EA00AA4646 /* RBException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A62124D80EA00AA4646 /* RBException.cpp */; };
 		1EE97A80124D80EA00AA4646 /* RBLockableObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A63124D80EA00AA4646 /* RBLockableObject.cpp */; };
 		1EE97A81124D80EA00AA4646 /* RBLockableObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A64124D80EA00AA4646 /* RBLockableObject.h */; };
 		1EE97A82124D80EA00AA4646 /* RBObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE97A65124D80EA00AA4646 /* RBObject.cpp */; };
@@ -49,7 +50,6 @@
 		1EE97AA0124D816F00AA4646 /* CAAudioBufferList.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EE97A9E124D816F00AA4646 /* CAAudioBufferList.h */; };
 		1EE97AA4124D818100AA4646 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE97AA3124D818100AA4646 /* CoreAudio.framework */; };
 		1EE97AA6124D818400AA4646 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE97AA5124D818400AA4646 /* AudioToolbox.framework */; };
-		1EE97AAA124D818B00AA4646 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE97AA9124D818B00AA4646 /* CoreAudioKit.framework */; };
 		1EE97AAE124D819100AA4646 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE97AAD124D819100AA4646 /* AudioUnit.framework */; };
 		1EEBF2F41269DFEF002CC6CA /* PKAudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEBF2F31269DFEF002CC6CA /* PKAudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEBF2F61269E012002CC6CA /* PKAudioPlayerInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEBF2F51269E012002CC6CA /* PKAudioPlayerInternal.h */; };
@@ -59,14 +59,10 @@
 		1EEBF4FD126A236D002CC6CA /* PKGraphicEQEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEBF4FB126A236D002CC6CA /* PKGraphicEQEffect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEBF4FE126A236D002CC6CA /* PKGraphicEQEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EEBF4FC126A236D002CC6CA /* PKGraphicEQEffect.cpp */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
-		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		1E41934C12DE381F007038D2 /* PKMatrixReverbEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKMatrixReverbEffect.h; sourceTree = "<group>"; };
 		1E41934D12DE381F007038D2 /* PKMatrixReverbEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PKMatrixReverbEffect.cpp; sourceTree = "<group>"; };
 		1E4195EA12E12C3C007038D2 /* PKDelayEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDelayEffect.h; sourceTree = "<group>"; };
@@ -75,9 +71,10 @@
 		1E41960912E12E3E007038D2 /* PKPitchEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PKPitchEffect.cpp; sourceTree = "<group>"; };
 		1E41970C12E34ECD007038D2 /* CoreAudioErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAudioErrors.h; sourceTree = "<group>"; };
 		1E41970D12E34ECD007038D2 /* CoreAudioErrors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreAudioErrors.cpp; sourceTree = "<group>"; };
+		1E42945C12EDF91D0004DFC2 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		1E42945E12EDF91D0004DFC2 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		1EE97A4F124D80EA00AA4646 /* PKAudioPlayerEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PKAudioPlayerEngine.cpp; sourceTree = "<group>"; };
 		1EE97A50124D80EA00AA4646 /* PKAudioPlayerEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKAudioPlayerEngine.h; sourceTree = "<group>"; };
-		1EE97A51124D80EA00AA4646 /* PKAudioPlayerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKAudioPlayerPrivate.h; sourceTree = "<group>"; };
 		1EE97A52124D80EA00AA4646 /* PKCoreAudioDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PKCoreAudioDecoder.cpp; sourceTree = "<group>"; };
 		1EE97A53124D80EA00AA4646 /* PKCoreAudioDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKCoreAudioDecoder.h; sourceTree = "<group>"; };
 		1EE97A54124D80EA00AA4646 /* PKDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PKDecoder.cpp; sourceTree = "<group>"; };
@@ -88,11 +85,11 @@
 		1EE97A5B124D80EA00AA4646 /* PKTaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKTaskQueue.h; sourceTree = "<group>"; };
 		1EE97A5C124D80EA00AA4646 /* PlayerKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerKit.h; sourceTree = "<group>"; };
 		1EE97A5D124D80EA00AA4646 /* PlayerKitDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerKitDefines.h; sourceTree = "<group>"; };
-		1EE97A5E124D80EA00AA4646 /* PlayerKitDefines.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayerKitDefines.mm; sourceTree = "<group>"; };
+		1EE97A5E124D80EA00AA4646 /* PlayerKitDefines.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerKitDefines.cpp; sourceTree = "<group>"; };
 		1EE97A5F124D80EA00AA4646 /* RBAtomic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RBAtomic.cpp; sourceTree = "<group>"; };
 		1EE97A60124D80EA00AA4646 /* RBAtomic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBAtomic.h; sourceTree = "<group>"; };
 		1EE97A61124D80EA00AA4646 /* RBException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBException.h; sourceTree = "<group>"; };
-		1EE97A62124D80EA00AA4646 /* RBException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RBException.mm; sourceTree = "<group>"; };
+		1EE97A62124D80EA00AA4646 /* RBException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RBException.cpp; sourceTree = "<group>"; };
 		1EE97A63124D80EA00AA4646 /* RBLockableObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RBLockableObject.cpp; sourceTree = "<group>"; };
 		1EE97A64124D80EA00AA4646 /* RBLockableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBLockableObject.h; sourceTree = "<group>"; };
 		1EE97A65124D80EA00AA4646 /* RBObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RBObject.cpp; sourceTree = "<group>"; };
@@ -109,7 +106,6 @@
 		1EE97A9E124D816F00AA4646 /* CAAudioBufferList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAAudioBufferList.h; path = Extras/CoreAudio/PublicUtility/CAAudioBufferList.h; sourceTree = DEVELOPER_DIR; };
 		1EE97AA3124D818100AA4646 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		1EE97AA5124D818400AA4646 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		1EE97AA9124D818B00AA4646 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
 		1EE97AAD124D819100AA4646 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		1EEBF2F31269DFEF002CC6CA /* PKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKAudioPlayer.h; sourceTree = "<group>"; };
 		1EEBF2F51269E012002CC6CA /* PKAudioPlayerInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKAudioPlayerInternal.h; sourceTree = "<group>"; };
@@ -121,7 +117,6 @@
 		32DBCF5E0370ADEE00C91783 /* PlayerKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerKit_Prefix.pch; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* PlayerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlayerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,11 +124,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
 				1EE97AA4124D818100AA4646 /* CoreAudio.framework in Frameworks */,
 				1EE97AA6124D818400AA4646 /* AudioToolbox.framework in Frameworks */,
-				1EE97AAA124D818B00AA4646 /* CoreAudioKit.framework in Frameworks */,
 				1EE97AAE124D819100AA4646 /* AudioUnit.framework in Frameworks */,
+				1E42945D12EDF91D0004DFC2 /* CoreFoundation.framework in Frameworks */,
+				1E42945F12EDF91D0004DFC2 /* CoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,15 +150,10 @@
 				1EE62F82126609A200A69141 /* Playback */,
 				1EE62F84126609B700A69141 /* Effects */,
 				1EE97A92124D814B00AA4646 /* CoreAudio Utility */,
-				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
-				1EE97AA3124D818100AA4646 /* CoreAudio.framework */,
-				1EE97AA5124D818400AA4646 /* AudioToolbox.framework */,
-				1EE97AA9124D818B00AA4646 /* CoreAudioKit.framework */,
-				1EE97AAD124D819100AA4646 /* AudioUnit.framework */,
 			);
 			name = PlayerKit;
 			sourceTree = "<group>";
@@ -171,8 +161,11 @@
 		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
-				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
+				1EE97AA3124D818100AA4646 /* CoreAudio.framework */,
+				1EE97AA5124D818400AA4646 /* AudioToolbox.framework */,
+				1EE97AAD124D819100AA4646 /* AudioUnit.framework */,
+				1E42945C12EDF91D0004DFC2 /* CoreFoundation.framework */,
+				1E42945E12EDF91D0004DFC2 /* CoreServices.framework */,
 			);
 			name = "External Frameworks and Libraries";
 			sourceTree = "<group>";
@@ -184,31 +177,6 @@
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		08FB77AEFE84172EC02AAC07 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
-		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
-			);
-			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
-		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
-				D2F7E79907B2D74100F64583 /* CoreData.framework */,
-				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		1EE62F82126609A200A69141 /* Playback */ = {
@@ -231,7 +199,7 @@
 				1EE97A5F124D80EA00AA4646 /* RBAtomic.cpp */,
 				1EE97A60124D80EA00AA4646 /* RBAtomic.h */,
 				1EE97A61124D80EA00AA4646 /* RBException.h */,
-				1EE97A62124D80EA00AA4646 /* RBException.mm */,
+				1EE97A62124D80EA00AA4646 /* RBException.cpp */,
 				1EE97A63124D80EA00AA4646 /* RBLockableObject.cpp */,
 				1EE97A64124D80EA00AA4646 /* RBLockableObject.h */,
 				1EE97A65124D80EA00AA4646 /* RBObject.cpp */,
@@ -262,7 +230,6 @@
 		1EE62F85126609CD00A69141 /* Decoders */ = {
 			isa = PBXGroup;
 			children = (
-				1EE97A51124D80EA00AA4646 /* PKAudioPlayerPrivate.h */,
 				1EE97A52124D80EA00AA4646 /* PKCoreAudioDecoder.cpp */,
 				1EE97A53124D80EA00AA4646 /* PKCoreAudioDecoder.h */,
 				1EE97A54124D80EA00AA4646 /* PKDecoder.cpp */,
@@ -304,7 +271,7 @@
 			children = (
 				1EE97A5C124D80EA00AA4646 /* PlayerKit.h */,
 				1EE97A5D124D80EA00AA4646 /* PlayerKitDefines.h */,
-				1EE97A5E124D80EA00AA4646 /* PlayerKitDefines.mm */,
+				1EE97A5E124D80EA00AA4646 /* PlayerKitDefines.cpp */,
 				32DBCF5E0370ADEE00C91783 /* PlayerKit_Prefix.pch */,
 			);
 			name = "Other Sources";
@@ -318,7 +285,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EE97A6D124D80EA00AA4646 /* PKAudioPlayerEngine.h in Headers */,
-				1EE97A6E124D80EA00AA4646 /* PKAudioPlayerPrivate.h in Headers */,
 				1EE97A70124D80EA00AA4646 /* PKCoreAudioDecoder.h in Headers */,
 				1EE97A72124D80EA00AA4646 /* PKDecoder.h in Headers */,
 				1EE97A76124D80EA00AA4646 /* PKScheduledDataSlice.h in Headers */,
@@ -413,9 +379,9 @@
 				1EE97A71124D80EA00AA4646 /* PKDecoder.cpp in Sources */,
 				1EE97A75124D80EA00AA4646 /* PKScheduledDataSlice.cpp in Sources */,
 				1EE97A77124D80EA00AA4646 /* PKTaskQueue.cpp in Sources */,
-				1EE97A7B124D80EA00AA4646 /* PlayerKitDefines.mm in Sources */,
+				1EE97A7B124D80EA00AA4646 /* PlayerKitDefines.cpp in Sources */,
 				1EE97A7C124D80EA00AA4646 /* RBAtomic.cpp in Sources */,
-				1EE97A7F124D80EA00AA4646 /* RBException.mm in Sources */,
+				1EE97A7F124D80EA00AA4646 /* RBException.cpp in Sources */,
 				1EE97A80124D80EA00AA4646 /* RBLockableObject.cpp in Sources */,
 				1EE97A82124D80EA00AA4646 /* RBObject.cpp in Sources */,
 				1EE97A8E124D814700AA4646 /* CAComponent.cpp in Sources */,

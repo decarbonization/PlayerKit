@@ -144,18 +144,4 @@ private:
 	RBException() : RBObject("RBException") {};
 };
 
-#ifdef __OBJC__
-	/*!
-	 @function
-	 @abstract	Convert an RBException object to an NSException object.
-	 */
-	PK_EXTERN NSException *RBExceptionToNSException(RBException &e);
-	
-	/*!
-	 @function
-	 @abstract	Convert an NSException object to an RBException object.
-	 */
-	PK_EXTERN RBException RBExceptionFromNSException(NSException *e);
-#endif /* __OBJC__ */
-
 #endif /* RBException_h */

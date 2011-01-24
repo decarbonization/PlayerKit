@@ -72,29 +72,4 @@ PK_EXTERN OSStatus PKAudioEffectCopyParameter(PKAudioEffectRef effect, AudioUnit
 ///Copy a parameter's info.
 PK_EXTERN OSStatus PKAudioEffectCopyParameterInfo(PKAudioEffectRef effect, AudioUnitParameterID inPropertyID, AudioUnitParameterInfo *outInfo);
 
-#define PKAUDIOEFFECT_DECLARE_PARAMETER(EffectName, ParameterName) PK_EXTERN OSStatus PK##EffectName##EffectSet##ParameterName(PK##EffectName##EffectRef effect, AudioUnitParameterValue value); \
-PK_EXTERN AudioUnitParameterValue PK##EffectName##EffectGet##ParameterName(PK##EffectName##EffectRef effect)
-
-#pragma mark -
-
-#define PKAUDIOEFFECT_SYNTHESIZE_PARAMETER_GETTER(EffectName, ParameterName, ParameterSelector) PK_EXTERN AudioUnitParameterValue PK##EffectName##EffectGet##ParameterName(PK##EffectName##EffectRef effect) \
-{ \
-	AudioUnitParameterValue value = 0.0; \
-	OSStatus error = PKAudioEffectCopyParameter(effect, &value, ParameterSelector, kAudioUnitScope_Global); \
-	if(error != noErr) \
-	{ \
-		value = 0.0; \
-		std::cerr << "Ignoring error " << error << " in " << __PRETTY_FUNCTION__ << "." << std::endl; \
-	} \
-	return value; \
-}
-
-#define PKAUDIOEFFECT_SYNTHESIZE_PARAMETER_SETTER(EffectName, ParameterName, ParameterSelector) PK_EXTERN OSStatus PK##EffectName##EffectSet##ParameterName(PK##EffectName##EffectRef effect, AudioUnitParameterValue value) \
-{ \
-	return PKAudioEffectSetParameter(effect, value, ParameterSelector, kAudioUnitScope_Global, 0); \
-}
-
-#define PKAUDIOEFFECT_SYNTHESIZE_PARAMETER(EffectName, ParameterName, ParameterSelector) PKAUDIOEFFECT_SYNTHESIZE_PARAMETER_SETTER(EffectName, ParameterName, ParameterSelector); \
-PKAUDIOEFFECT_SYNTHESIZE_PARAMETER_GETTER(EffectName, ParameterName, ParameterSelector)
-
 #endif /* PKAudioEffect_h */

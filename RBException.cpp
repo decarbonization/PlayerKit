@@ -9,7 +9,6 @@
 
 #include "RBException.h"
 #include <iostream>
-#import <Cocoa/Cocoa.h>
 
 CFStringRef RBException::InternalInconsistencyDomain = CFSTR("InternalInconsistencyDomain");
 
@@ -50,18 +49,4 @@ CFErrorRef RBException::CopyError() const
 												  keys, //user info keys
 												  values, //user info values
 												  1); //user info pairs count
-}
-
-#pragma mark -
-
-extern "C" NSException *RBExceptionToNSException(RBException &e)
-{
-	return [NSException exceptionWithName:[NSString stringWithString:(NSString *)e.GetDomain()] 
-								   reason:[NSString stringWithString:(NSString *)e.GetReason()] 
-								 userInfo:nil];
-}
-
-extern "C" RBException RBExceptionFromNSException(NSException *e)
-{
-	return RBException((CFStringRef)[e name], (CFStringRef)[e reason]);
 }

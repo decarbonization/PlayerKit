@@ -32,8 +32,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 316897690;
-			PBXWorkspaceStateSaveDate = 316897690;
+			PBXPerProjectTemplateStateSaveDate = 317584971;
+			PBXWorkspaceStateSaveDate = 317584971;
 		};
 		sourceControlManager = 1EE97A48124D80BC00AA4646 /* Source Control */;
 		userBuildSettings = {
@@ -42,7 +42,7 @@
 	1E41934C12DE381F007038D2 /* PKMatrixReverbEffect.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {914, 596}}";
-			sepNavSelRange = "{452, 0}";
+			sepNavSelRange = "{152, 0}";
 			sepNavVisRange = "{0, 946}";
 			sepNavWindowFrame = "{{387, 90}, {973, 709}}";
 		};
@@ -59,7 +59,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {914, 870}}";
 			sepNavSelRange = "{1398, 0}";
-			sepNavVisRange = "{384, 1331}";
+			sepNavVisRange = "{369, 1346}";
 			sepNavWindowFrame = "{{84, 101}, {973, 709}}";
 		};
 	};
@@ -74,7 +74,7 @@
 	1E41960812E12E3E007038D2 /* PKPitchEffect.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {914, 615}}";
-			sepNavSelRange = "{542, 0}";
+			sepNavSelRange = "{432, 0}";
 			sepNavVisRange = "{3, 1093}";
 			sepNavWindowFrame = "{{153, 38}, {973, 709}}";
 		};
@@ -96,10 +96,10 @@
 	};
 	1E41970D12E34ECD007038D2 /* CoreAudioErrors.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {439, 1200}}";
-			sepNavSelRange = "{2915, 0}";
-			sepNavVisRange = "{2970, 35}";
-			sepNavWindowFrame = "{{61, 122}, {973, 709}}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 990}}";
+			sepNavSelRange = "{2882, 0}";
+			sepNavVisRange = "{0, 1828}";
+			sepNavWindowFrame = "{{38, 143}, {973, 709}}";
 		};
 	};
 	1EE97A48124D80BC00AA4646 /* Source Control */ = {
@@ -118,25 +118,33 @@
 	};
 	1EE97A4F124D80EA00AA4646 /* PKAudioPlayerEngine.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 18150}}";
-			sepNavSelRange = "{7119, 0}";
-			sepNavVisRange = "{6839, 887}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 18120}}";
+			sepNavSelRange = "{607, 0}";
+			sepNavVisRange = "{0, 999}";
 			sepNavWindowFrame = "{{130, 97}, {889, 671}}";
 		};
 	};
 	1EE97A50124D80EA00AA4646 /* PKAudioPlayerEngine.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 6960}}";
-			sepNavSelRange = "{14015, 0}";
-			sepNavVisRange = "{13168, 2039}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 6990}}";
+			sepNavSelRange = "{2862, 0}";
+			sepNavVisRange = "{1954, 1371}";
 			sepNavWindowFrame = "{{130, 97}, {889, 671}}";
+		};
+	};
+	1EE97A52124D80EA00AA4646 /* PKCoreAudioDecoder.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {720, 2235}}";
+			sepNavSelRange = "{224, 0}";
+			sepNavVisRange = "{154, 298}";
+			sepNavWindowFrame = "{{61, 122}, {973, 709}}";
 		};
 	};
 	1EE97A53124D80EA00AA4646 /* PKCoreAudioDecoder.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 728}}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 840}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 852}";
+			sepNavVisRange = "{305, 914}";
 			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
 		};
 	};
@@ -146,6 +154,14 @@
 			sepNavSelRange = "{502, 0}";
 			sepNavVisRange = "{0, 993}";
 			sepNavWindowFrame = "{{84, 139}, {889, 671}}";
+		};
+	};
+	1EE97A5A124D80EA00AA4646 /* PKTaskQueue.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 3300}}";
+			sepNavSelRange = "{619, 0}";
+			sepNavVisRange = "{399, 147}";
+			sepNavWindowFrame = "{{107, 80}, {973, 709}}";
 		};
 	};
 	1EE97A5B124D80EA00AA4646 /* PKTaskQueue.h */ = {
@@ -166,32 +182,41 @@
 	};
 	1EE97A5D124D80EA00AA4646 /* PlayerKitDefines.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 3354}}";
-			sepNavSelRange = "{3103, 0}";
-			sepNavVisRange = "{1627, 1811}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1605}}";
+			sepNavSelRange = "{294, 0}";
+			sepNavVisRange = "{0, 868}";
 			sepNavWindowFrame = "{{84, 139}, {889, 671}}";
 		};
 	};
-	1EE97A5E124D80EA00AA4646 /* PlayerKitDefines.mm */ = {
+	1EE97A5E124D80EA00AA4646 /* PlayerKitDefines.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 2678}}";
-			sepNavSelRange = "{5354, 0}";
-			sepNavVisRange = "{0, 1424}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 765}}";
+			sepNavSelRange = "{878, 0}";
+			sepNavVisRange = "{0, 1155}";
 			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
+		};
+	};
+	1EE97A60124D80EA00AA4646 /* RBAtomic.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {914, 3225}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{3349, 749}";
+			sepNavWindowFrame = "{{176, 17}, {973, 709}}";
 		};
 	};
 	1EE97A61124D80EA00AA4646 /* RBException.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 2145}}";
-			sepNavSelRange = "{4280, 0}";
-			sepNavVisRange = "{3658, 897}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 2250}}";
+			sepNavSelRange = "{4173, 0}";
+			sepNavVisRange = "{0, 1432}";
+			sepNavWindowFrame = "{{84, 101}, {973, 709}}";
 		};
 	};
-	1EE97A62124D80EA00AA4646 /* RBException.mm */ = {
+	1EE97A62124D80EA00AA4646 /* RBException.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 910}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1144}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 870}}";
+			sepNavSelRange = "{198, 0}";
+			sepNavVisRange = "{0, 1118}";
 			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
 		};
 	};
@@ -229,33 +254,33 @@
 	};
 	1EEBF2F51269E012002CC6CA /* PKAudioPlayerInternal.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 650}}";
-			sepNavSelRange = "{746, 0}";
-			sepNavVisRange = "{155, 1143}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 750}}";
+			sepNavSelRange = "{568, 0}";
+			sepNavVisRange = "{225, 1073}";
 			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
 		};
 	};
 	1EEBF2F91269E033002CC6CA /* PKAudioPlayer.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 10740}}";
-			sepNavSelRange = "{14826, 0}";
-			sepNavVisRange = "{14526, 767}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 10110}}";
+			sepNavSelRange = "{6067, 0}";
+			sepNavVisRange = "{5290, 1496}";
 			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
 		};
 	};
 	1EEBF474126A16E8002CC6CA /* PKAudioEffect.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 1770}}";
-			sepNavSelRange = "{603, 0}";
-			sepNavVisRange = "{472, 1507}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1245}}";
+			sepNavSelRange = "{2974, 0}";
+			sepNavVisRange = "{0, 1090}";
 			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
 		};
 	};
 	1EEBF475126A16E8002CC6CA /* PKAudioEffect.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 3975}}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 3915}}";
 			sepNavSelRange = "{2464, 0}";
-			sepNavVisRange = "{0, 733}";
+			sepNavVisRange = "{4074, 880}";
 			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
 		};
 	};
@@ -269,17 +294,17 @@
 	};
 	1EEBF4FC126A236D002CC6CA /* PKGraphicEQEffect.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 1680}}";
-			sepNavSelRange = "{2453, 0}";
-			sepNavVisRange = "{1855, 1062}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1710}}";
+			sepNavSelRange = "{2598, 0}";
+			sepNavVisRange = "{1211, 1022}";
 			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
 		};
 	};
 	32DBCF5E0370ADEE00C91783 /* PlayerKit_Prefix.pch */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {830, 558}}";
-			sepNavSelRange = "{114, 0}";
-			sepNavVisRange = "{0, 190}";
+			sepNavSelRange = "{98, 0}";
+			sepNavVisRange = "{0, 138}";
 			sepNavWindowFrame = "{{38, 181}, {889, 671}}";
 		};
 	};

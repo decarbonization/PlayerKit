@@ -10,12 +10,6 @@
 #include "PKCoreAudioDecoder.h"
 #include "CAStreamBasicDescription.h"
 
-//From PlayerKitDefines.h
-extern "C" {
-	extern CFStringRef const PKDecodingErrorDomain;
-	extern Float64 const kPKCanonicalSampleRate;
-};
-
 #pragma mark PKCoreAudioDecoder
 
 #pragma mark Lifetime

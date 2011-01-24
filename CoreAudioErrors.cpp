@@ -10,9 +10,7 @@
 #include "CoreAudioErrors.h"
 #include <utility>
 
-typedef std::pair<OSStatus, CFStringRef> Error;
-
-static const Error CoreAudioErrorTable[] = {
+static const std::pair<OSStatus, CFStringRef> CoreAudioErrorTable[] = {
 	std::make_pair(0, CFSTR("noErr")),
 	std::make_pair(-50, CFSTR("paramErr")),
 	
@@ -58,7 +56,7 @@ PK_EXTERN PK_VISIBILITY_HIDDEN CFStringRef CoreAudioGetErrorName(OSStatus errorC
 {
 	for (int index = 0; index < sizeof(CoreAudioErrorTable) / sizeof(CoreAudioErrorTable[0]); index++)
 	{
-		const Error &error = CoreAudioErrorTable[index];
+		const std::pair<OSStatus, CFStringRef> &error = CoreAudioErrorTable[index];
 		if(error.first == errorCode)
 			return error.second;
 	}
