@@ -27,6 +27,8 @@ typedef struct PKAudioPlayer {
 	
 	//State
 	volatile int32_t isPaused;
+	volatile int32_t hasBroadcastedPresence;
+	CFStringRef sessionID;
 } PKAudioPlayer;
 
 ///The singleton instance of the audio player state.

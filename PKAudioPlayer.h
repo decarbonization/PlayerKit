@@ -30,6 +30,10 @@ PK_EXTERN CFStringRef const PKAudioPlayerDidFinishPlayingNotification;
 ///The notification posted when an audio player has changed output devices.
 PK_EXTERN CFStringRef const PKAudioPlayerDidChangeOutputDeviceNotification;
 
+///The notification posted when an audio player discovers that another
+///PlayerKit-powered application is playing music on the host computer.
+PK_EXTERN CFStringRef const PKAudioPlayerDidEncounterOtherPlayerNotification;
+
 #pragma mark -
 #pragma mark Lifecycle
 

@@ -574,7 +574,7 @@ void PKAudioPlayerEngine::StopProcessing() throw(RBException)
 	{
 		PKScheduledDataSlice *dataSlice = mDataSlices[index];
 		dataSlice->Acquire();
-		dataSlice->mInvalidated = true;
+		dataSlice->Reset();
 		dataSlice->Relinquish();
 	}
 	
@@ -591,6 +591,7 @@ void PKAudioPlayerEngine::StopProcessing() throw(RBException)
 		RBAssertNoErr(errorCode, CFSTR("Could not reset node %ld, error %ld."), node, errorCode);
 	}
 	
+	//Reset any paused state.
 	mProcessingIsPaused = false;
 	
 	if(mSortedDataSlicesForPausedProcessing)

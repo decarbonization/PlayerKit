@@ -26,6 +26,17 @@ PK_VISIBILITY_HIDDEN volatile int32_t AudioPlayerStateInitCount = 0;
 PK_EXTERN CFStringRef const PKAudioPlayerDidEncounterErrorNotification = CFSTR("PKAudioPlayerDidEncounterErrorNotification");
 PK_EXTERN CFStringRef const PKAudioPlayerDidFinishPlayingNotification = CFSTR("PKAudioPlayerDidFinishPlayingNotification");
 PK_EXTERN CFStringRef const PKAudioPlayerDidChangeOutputDeviceNotification = CFSTR("PKAudioPlayerDidChangeOutputDeviceNotification");
+PK_EXTERN CFStringRef const PKAudioPlayerDidEncounterOtherPlayerNotification = CFSTR("PKAudioPlayerDidEncounterOtherPlayerNotification");
+
+#pragma mark -
+
+static CFStringRef const PKAudioPlayerDidBroadcastPresenceNotification = CFSTR("com.roundabout.PKAudioPlayerDidBroadcastPresenceNotification");
+
+static void PKAudioPlayerDidBroadcastPresence(CFNotificationCenterRef center, 
+											  void *observer, 
+											  CFStringRef name, 
+											  const void *object, 
+											  CFDictionaryRef userInfo);
 
 #pragma mark -
 #pragma mark Lifecycle
@@ -107,6 +118,17 @@ PK_EXTERN Boolean PKAudioPlayerInit(CFErrorRef *outError)
 			});
 			
 		});
+		
+		CFNotificationCenterAddObserver(CFNotificationCenterGetDistributedCenter(), 
+										NULL, 
+										CFNotificationCallback(&PKAudioPlayerDidBroadcastPresence), 
+										PKAudioPlayerDidBroadcastPresenceNotification, 
+										NULL, 
+										CFNotificationSuspensionBehaviorDeliverImmediately);
+		
+		CFUUIDRef sessionUUID = CFUUIDCreate(kCFAllocatorDefault);
+		AudioPlayerState.sessionID = CFUUIDCreateString(kCFAllocatorDefault, sessionUUID);
+		CFRelease(sessionUUID);
 	}
 	catch (RBException e)
 	{
@@ -160,6 +182,12 @@ PK_EXTERN Boolean PKAudioPlayerTeardown(CFErrorRef *outError)
 			AudioPlayerState.decoder->Release();
 			AudioPlayerState.decoder = NULL;
 		}
+		
+		if(AudioPlayerState.sessionID)
+		{
+			CFRelease(AudioPlayerState.sessionID);
+			AudioPlayerState.sessionID = NULL;
+		}
 	}
 	catch (RBException e)
 	{
@@ -168,7 +196,30 @@ PK_EXTERN Boolean PKAudioPlayerTeardown(CFErrorRef *outError)
 		return false;
 	}
 	
+	memset(&AudioPlayerState, 0, sizeof(AudioPlayerState));
+	
 	return true;
+}
+
+#pragma mark -
+#pragma mark Notifications
+
+static void PKAudioPlayerDidBroadcastPresence(CFNotificationCenterRef center, 
+											  void *observer, 
+											  CFStringRef name, 
+											  const void *object, 
+											  CFDictionaryRef userInfo)
+{
+	if(CFEqual(AudioPlayerState.sessionID, CFStringRef(object)))
+	   return;
+	
+	dispatch_async(dispatch_get_main_queue(), ^{
+		CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), 
+											 PKAudioPlayerDidEncounterOtherPlayerNotification, 
+											 NULL, 
+											 NULL, 
+											 true);
+	});
 }
 
 #pragma mark -
@@ -423,6 +474,17 @@ PK_EXTERN Boolean PKAudioPlayerPlay(CFErrorRef *outError)
 		return PKAudioPlayerResume(outError);
 	
 	RBLockableObject::Acquisitor lock(&AudioPlayerStateLock);
+	
+	if(OSMemoryBarrier(), !AudioPlayerState.hasBroadcastedPresence)
+	{
+		CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), 
+											 PKAudioPlayerDidBroadcastPresenceNotification, 
+											 AudioPlayerState.sessionID, 
+											 NULL, 
+											 true);
+		
+		OSAtomicCompareAndSwap32Barrier(AudioPlayerState.hasBroadcastedPresence, 1, &AudioPlayerState.hasBroadcastedPresence);
+	}
 	
 	try
 	{

@@ -32,8 +32,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 317703741;
-			PBXWorkspaceStateSaveDate = 317703741;
+			PBXPerProjectTemplateStateSaveDate = 318916325;
+			PBXWorkspaceStateSaveDate = 318916325;
 		};
 		sourceControlManager = 1EE97A48124D80BC00AA4646 /* Source Control */;
 		userBuildSettings = {
@@ -65,9 +65,9 @@
 	};
 	1E4195EB12E12C3C007038D2 /* PKDelayEffect.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {914, 2205}}";
-			sepNavSelRange = "{4003, 0}";
-			sepNavVisRange = "{3060, 1370}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 2028}}";
+			sepNavSelRange = "{1098, 0}";
+			sepNavVisRange = "{465, 1379}";
 			sepNavWindowFrame = "{{153, 38}, {973, 709}}";
 		};
 	};
@@ -118,17 +118,17 @@
 	};
 	1EE97A4F124D80EA00AA4646 /* PKAudioPlayerEngine.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 18120}}";
-			sepNavSelRange = "{607, 0}";
-			sepNavVisRange = "{0, 999}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 15808}}";
+			sepNavSelRange = "{16359, 0}";
+			sepNavVisRange = "{14917, 1760}";
 			sepNavWindowFrame = "{{130, 97}, {889, 671}}";
 		};
 	};
 	1EE97A50124D80EA00AA4646 /* PKAudioPlayerEngine.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 6990}}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 6032}}";
 			sepNavSelRange = "{2862, 0}";
-			sepNavVisRange = "{1954, 1371}";
+			sepNavVisRange = "{14997, 1820}";
 			sepNavWindowFrame = "{{130, 97}, {889, 671}}";
 		};
 	};
@@ -154,6 +154,14 @@
 			sepNavSelRange = "{502, 0}";
 			sepNavVisRange = "{0, 993}";
 			sepNavWindowFrame = "{{84, 139}, {889, 671}}";
+		};
+	};
+	1EE97A58124D80EA00AA4646 /* PKScheduledDataSlice.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {916, 1287}}";
+			sepNavSelRange = "{2737, 0}";
+			sepNavVisRange = "{1625, 1347}";
+			sepNavWindowFrame = "{{15, 160}, {975, 713}}";
 		};
 	};
 	1EE97A5A124D80EA00AA4646 /* PKTaskQueue.cpp */ = {
@@ -246,41 +254,41 @@
 	};
 	1EEBF2F31269DFEF002CC6CA /* PKAudioPlayer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 1875}}";
-			sepNavSelRange = "{3435, 0}";
-			sepNavVisRange = "{3208, 1563}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1703}}";
+			sepNavSelRange = "{1425, 0}";
+			sepNavVisRange = "{40, 1915}";
 			sepNavWindowFrame = "{{38, 181}, {889, 671}}";
 		};
 	};
 	1EEBF2F51269E012002CC6CA /* PKAudioPlayerInternal.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 750}}";
-			sepNavSelRange = "{568, 0}";
-			sepNavVisRange = "{225, 1073}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 689}}";
+			sepNavSelRange = "{638, 0}";
+			sepNavVisRange = "{152, 1100}";
 			sepNavWindowFrame = "{{15, 202}, {889, 671}}";
 		};
 	};
 	1EEBF2F91269E033002CC6CA /* PKAudioPlayer.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 10110}}";
-			sepNavSelRange = "{6067, 0}";
-			sepNavVisRange = "{5290, 1496}";
-			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 9945}}";
+			sepNavSelRange = "{6045, 0}";
+			sepNavVisRange = "{5583, 1092}";
+			sepNavWindowFrame = "{{38, 181}, {889, 671}}";
 		};
 	};
 	1EEBF474126A16E8002CC6CA /* PKAudioEffect.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 1245}}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 1079}}";
 			sepNavSelRange = "{2974, 0}";
-			sepNavVisRange = "{0, 1090}";
+			sepNavVisRange = "{0, 1302}";
 			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
 		};
 	};
 	1EEBF475126A16E8002CC6CA /* PKAudioEffect.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 3915}}";
-			sepNavSelRange = "{2464, 0}";
-			sepNavVisRange = "{4074, 880}";
+			sepNavIntBoundsRect = "{{0, 0}, {830, 3393}}";
+			sepNavSelRange = "{419, 0}";
+			sepNavVisRange = "{0, 839}";
 			sepNavWindowFrame = "{{61, 160}, {889, 671}}";
 		};
 	};

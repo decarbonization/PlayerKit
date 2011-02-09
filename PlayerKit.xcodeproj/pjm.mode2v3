@@ -277,14 +277,14 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>17</integer>
+											<integer>16</integer>
 											<integer>15</integer>
 											<integer>14</integer>
 											<integer>0</integer>
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 0}, {429, 333}}</string>
+									<string>{{0, 196}, {429, 333}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -445,8 +445,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1EC3B95A12EFC63E0066884A</string>
-				<string>1EC3B95B12EFC63E0066884A</string>
+				<string>1E9637CD130246ED00AA0968</string>
+				<string>1E9637CE130246ED00AA0968</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -483,8 +483,9 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1E9637CF130246ED00AA0968</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>/Users/pjm/Documents/Projects/PlayerKit/PlayerKit.xcodeproj</string>
+		<string>/Users/pjm/Documents/Projects/Shippable/PlayerKit/PlayerKit.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>994 459 446 419 0 0 1440 878 </string>
@@ -699,7 +700,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>1EC3B95C12EFC63E0066884A</string>
+				<string>1E9637D2130246ED00AA0968</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
