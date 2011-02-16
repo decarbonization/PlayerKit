@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>1E963A23130C085700AA0968</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>PKAudioPlayerEngine.cpp</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>1E963A24130C085700AA0968</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>PKAudioPlayerEngine.cpp</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>1E963A7C130C0B7000AA0968</string>
+						<key>history</key>
+						<array>
+							<string>1E9639E5130C066200AA0968</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {889, 574}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>130 153 889 615 0 0 1440 878 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -277,7 +318,7 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>16</integer>
+											<integer>19</integer>
 											<integer>15</integer>
 											<integer>14</integer>
 											<integer>0</integer>
@@ -445,8 +486,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1E9637CD130246ED00AA0968</string>
-				<string>1E9637CE130246ED00AA0968</string>
+				<string>1E963A18130C085700AA0968</string>
+				<string>1E963A19130C085700AA0968</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -483,8 +524,9 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1E9637CF130246ED00AA0968</string>
+		<string>1E963A7D130C0B7000AA0968</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
+		<string>1E963A23130C085700AA0968</string>
 		<string>/Users/pjm/Documents/Projects/Shippable/PlayerKit/PlayerKit.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -700,7 +742,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>1E9637D2130246ED00AA0968</string>
+				<string>1E963A26130C085700AA0968</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

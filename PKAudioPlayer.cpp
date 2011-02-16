@@ -154,7 +154,7 @@ PK_EXTERN Boolean PKAudioPlayerTeardown(CFErrorRef *outError)
 	
 	try
 	{
-		if(PKAudioPlayerIsPlaying() && !PKAudioPlayerStop(outError))
+		if((PKAudioPlayerIsPlaying() || PKAudioPlayerIsPaused()) && !PKAudioPlayerStop(false, outError))
 			return false;
 		
 		if(AudioPlayerState.engine)
@@ -334,7 +334,7 @@ PK_EXTERN Boolean PKAudioPlayerSetDecoder(PKDecoder *decoder, CFErrorRef *outErr
 	if(decoder == AudioPlayerState.decoder)
 		return true;
 	
-	if(PKAudioPlayerIsPlaying() && !PKAudioPlayerStop(outError))
+	if((PKAudioPlayerIsPlaying() || PKAudioPlayerIsPaused()) && !PKAudioPlayerStop(false, outError))
 		return false;
 	
 	RBLockableObject::Acquisitor lock(&AudioPlayerStateLock);
@@ -503,7 +503,7 @@ PK_EXTERN Boolean PKAudioPlayerPlay(CFErrorRef *outError)
 	return true;
 }
 
-PK_EXTERN Boolean PKAudioPlayerStop(CFErrorRef *outError)
+PK_EXTERN Boolean PKAudioPlayerStop(Boolean postNotification, CFErrorRef *outError)
 {
 	if(!PKAudioPlayerIsPlaying() && !PKAudioPlayerIsPaused())
 		return true;
@@ -520,17 +520,20 @@ PK_EXTERN Boolean PKAudioPlayerStop(CFErrorRef *outError)
 		AudioPlayerState.isPaused = false;
 		PKAudioPlayerSetCurrentTime(0.0, NULL);
 		
-		dispatch_async(dispatch_get_main_queue(), ^{
-			CFDictionaryRef userInfo = CFDICT({ CFSTR("DidFinish") }, { kCFBooleanFalse });
-			
-			CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), 
-												 PKAudioPlayerDidFinishPlayingNotification, 
-												 NULL, 
-												 userInfo, 
-												 true);
-			
-			CFRelease(userInfo);
-		});
+		if(postNotification)
+		{
+			dispatch_async(dispatch_get_main_queue(), ^{
+				CFDictionaryRef userInfo = CFDICT({ CFSTR("DidFinish") }, { kCFBooleanFalse });
+				
+				CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), 
+													 PKAudioPlayerDidFinishPlayingNotification, 
+													 NULL, 
+													 userInfo, 
+													 true);
+				
+				CFRelease(userInfo);
+			});
+		}
 	}
 	catch (RBException e)
 	{

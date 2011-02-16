@@ -89,7 +89,7 @@ void PKScheduledDataSlice::Reset()
 {
 	Acquisitor lock(this);
 	
-	bzero(&mScheduledAudioSlice.mTimeStamp, sizeof(AudioTimeStamp));
+	memset(&mScheduledAudioSlice.mTimeStamp, 0, sizeof(AudioTimeStamp));
 	
 	mNumberOfActiveSlicesAtomicCounter->SetValue(0);
 	mBuffersHaveData = false;

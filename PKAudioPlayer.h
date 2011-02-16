@@ -67,9 +67,10 @@ PK_EXTERN CFURLRef PKAudioPlayerCopyURL();
 PK_EXTERN Boolean PKAudioPlayerPlay(CFErrorRef *outError);
 
 ///Stop playback in the audio player.
+///	\param	postNotification	If true then the audio player will post a PKAudioPlayerDidFinishPlayingNotification.
 ///	\param	outError	An object encapsulating a description of any errors that occurred. May be null. Must be freed by caller.
 ///	\result	true if playback could be stopped; false otherwise.
-PK_EXTERN Boolean PKAudioPlayerStop(CFErrorRef *outError);
+PK_EXTERN Boolean PKAudioPlayerStop(Boolean postNotification, CFErrorRef *outError);
 
 ///Returns a Boolean indicating whether or not the audio player is currently playing something.
 PK_EXTERN Boolean PKAudioPlayerIsPlaying();
