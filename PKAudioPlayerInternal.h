@@ -39,6 +39,8 @@ PK_EXTERN PK_VISIBILITY_HIDDEN PKAudioPlayer AudioPlayerState;
 
 #define CFDICT(keys, values) CFDictionaryCreate(kCFAllocatorDefault, (const void *[])keys, (const void *[])values, sizeof((const void *[])keys) / sizeof(const void *), &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks)
 
+#define CHECK_STATE_INITIALIZED() ({ if(OSMemoryBarrier(), AudioPlayerStateInitCount == 0) RBAssert(0, CFSTR("Attempted use of PKAudioPlayer before PKAudioPlayerInit has been called.")); })
+
 #pragma mark -
 #pragma mark Controlling Playback
 

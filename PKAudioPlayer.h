@@ -34,6 +34,19 @@ PK_EXTERN CFStringRef const PKAudioPlayerDidChangeOutputDeviceNotification;
 ///PlayerKit-powered application is playing music on the host computer.
 PK_EXTERN CFStringRef const PKAudioPlayerDidEncounterOtherPlayerNotification;
 
+
+///The different possible output destinations that can be returned by PKAudioPlayer.
+typedef enum PKAudioPlayerOutputDestination {
+	///PKAudioPlayer does not know where it is sending audio.
+	kPKAudioPlayerOutputDestinationUnknown = 0, 
+	
+	///PKAudioPlayer is sending audio to headphones connected to the computer.
+	kPKAudioPlayerOutputDestinationHeadphones = 'hdpn',
+	
+	///PKAudioPlayer is sending audio to the computer's internal speakers.
+	kPKAudioPlayerOutputDestinationInternalSpeakers = 'ispk',
+} PKAudioPlayerOutputDestination;
+
 #pragma mark -
 #pragma mark Lifecycle
 
@@ -122,5 +135,10 @@ PK_EXTERN Boolean PKAudioPlayerSetCurrentTime(CFTimeInterval currentTime, CFErro
 
 ///Returns the current location of playback in the song the audio player is playing.
 PK_EXTERN CFTimeInterval PKAudioPlayerGetCurrentTime();
+
+#pragma mark -
+
+///Returns the physical destination of audio sent from PKAudioPlayer to the user.
+PK_EXTERN PKAudioPlayerOutputDestination PKAudioPlayerGetAudioOutputDestination(CFErrorRef *outError);
 
 #endif /* PKAudioPlayer_h */

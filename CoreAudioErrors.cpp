@@ -11,8 +11,13 @@
 #include <utility>
 
 static const std::pair<OSStatus, CFStringRef> CoreAudioErrorTable[] = {
+	/** General Errors **/
+	
 	std::make_pair(0, CFSTR("noErr")),
 	std::make_pair(-50, CFSTR("paramErr")),
+	
+	
+	/** For AudioUnit **/
 	
 	std::make_pair(-10879, CFSTR("kAudioUnitErr_InvalidProperty")), 
 	std::make_pair(-10878, CFSTR("kAudioUnitErr_InvalidParameter")), 
@@ -32,11 +37,17 @@ static const std::pair<OSStatus, CFStringRef> CoreAudioErrorTable[] = {
 	std::make_pair(-10848, CFSTR("kAudioUnitErr_InvalidOfflineRender")), 
 	std::make_pair(-10847, CFSTR("kAudioUnitErr_Unauthorized")), 
 	
+	
+	/** For AUGraph **/
+	
 	std::make_pair(-10860, CFSTR("kAUGraphErr_NodeNotFound")), 
 	std::make_pair(-10861, CFSTR("kAUGraphErr_InvalidConnection")), 
 	std::make_pair(-10862, CFSTR("kAUGraphErr_OutputNodeErr")), 
 	std::make_pair(-10863, CFSTR("kAUGraphErr_CannotDoInCurrentContext")), 
 	std::make_pair(-10864, CFSTR("kAUGraphErr_InvalidAudioUnit")), 
+	
+	
+	/** For Audio File **/
 	
 	std::make_pair('wht?', CFSTR("kAudioFileUnspecifiedError")), 
 	std::make_pair('typ?', CFSTR("kAudioFileUnsupportedFileTypeError")), 
@@ -50,6 +61,21 @@ static const std::pair<OSStatus, CFStringRef> CoreAudioErrorTable[] = {
 	std::make_pair('pck?', CFSTR("kAudioFileInvalidPacketOffsetError")), 
 	std::make_pair('dta?', CFSTR("kAudioFileInvalidFileError")), 
 	std::make_pair('op??', CFSTR("kAudioFileOperationNotSupportedError")), 
+	
+	
+	/** For Audio Hardware **/
+	
+	std::make_pair('stop', CFSTR("kAudioHardwareNotRunningError")), 
+	std::make_pair('what', CFSTR("kAudioHardwareUnspecifiedError")), 
+	std::make_pair('who?', CFSTR("kAudioHardwareUnknownPropertyError")), 
+	std::make_pair('!siz', CFSTR("kAudioHardwareBadPropertySizeError")), 
+	std::make_pair('nope', CFSTR("kAudioHardwareIllegalOperationError")), 
+	std::make_pair('!obj', CFSTR("kAudioHardwareBadObjectError")), 
+	std::make_pair('!dev', CFSTR("kAudioHardwareBadDeviceError")), 
+	std::make_pair('!str', CFSTR("kAudioHardwareBadStreamError")), 
+	std::make_pair('unop', CFSTR("kAudioHardwareUnsupportedOperationError")), 
+	std::make_pair('!dat', CFSTR("kAudioDeviceUnsupportedFormatError")), 
+	std::make_pair('!hog', CFSTR("kAudioDevicePermissionsError")), 
 };
 
 PK_EXTERN PK_VISIBILITY_HIDDEN CFStringRef CoreAudioGetErrorName(OSStatus errorCode)

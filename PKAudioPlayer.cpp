@@ -10,6 +10,7 @@
 #import "PKAudioPlayer.h"
 #import "PKAudioPlayerInternal.h"
 #import <libKern/OSAtomic.h>
+#import "CoreAudioErrors.h"
 
 #import "CAAudioBufferList.h"
 #import "CAStreamBasicDescription.h"
@@ -331,6 +332,8 @@ static void __PKAudioPlayerSetupAudioConverter(CAStreamBasicDescription *sourceF
 
 PK_EXTERN Boolean PKAudioPlayerSetDecoder(PKDecoder *decoder, CFErrorRef *outError)
 {
+	CHECK_STATE_INITIALIZED();
+	
 	if(decoder == AudioPlayerState.decoder)
 		return true;
 	
@@ -421,6 +424,8 @@ PK_EXTERN Boolean PKAudioPlayerSetDecoder(PKDecoder *decoder, CFErrorRef *outErr
 
 PK_EXTERN PKDecoder *PKAudioPlayerGetDecoder()
 {
+	CHECK_STATE_INITIALIZED();
+	
 	RBLockableObject::Acquisitor lock(&AudioPlayerStateLock);
 	
 	return AudioPlayerState.decoder;
@@ -430,6 +435,8 @@ PK_EXTERN PKDecoder *PKAudioPlayerGetDecoder()
 
 PK_EXTERN Boolean PKAudioPlayerSetURL(CFURLRef location, CFErrorRef *outError)
 {
+	CHECK_STATE_INITIALIZED();
+	
 	RBLockableObject::Acquisitor lock(&AudioPlayerStateLock);
 	
 	try
@@ -458,6 +465,8 @@ PK_EXTERN Boolean PKAudioPlayerSetURL(CFURLRef location, CFErrorRef *outError)
 
 PK_EXTERN CFURLRef PKAudioPlayerCopyURL()
 {
+	CHECK_STATE_INITIALIZED();
+	
 	RBLockableObject::Acquisitor lock(&AudioPlayerStateLock);
 	
 	return AudioPlayerState.decoder->CopyLocation();
@@ -467,6 +476,8 @@ PK_EXTERN CFURLRef PKAudioPlayerCopyURL()
 
 PK_EXTERN Boolean PKAudioPlayerPlay(CFErrorRef *outError)
 {
+	CHECK_STATE_INITIALIZED();
+	
 	if(PKAudioPlayerIsPlaying())
 		return true;
 	
@@ -505,6 +516,8 @@ PK_EXTERN Boolean PKAudioPlayerPlay(CFErrorRef *outError)
 
 PK_EXTERN Boolean PKAudioPlayerStop(Boolean postNotification, CFErrorRef *outError)
 {
+	CHECK_STATE_INITIALIZED();
+	
 	if(!PKAudioPlayerIsPlaying() && !PKAudioPlayerIsPaused())
 		return true;
 	
@@ -545,6 +558,8 @@ PK_EXTERN Boolean PKAudioPlayerStop(Boolean postNotification, CFErrorRef *outErr
 
 PK_EXTERN Boolean PKAudioPlayerIsPlaying()
 {
+	CHECK_STATE_INITIALIZED();
+	
 	RBLockableObject::Acquisitor lock(&AudioPlayerStateLock);
 	
 	return AudioPlayerState.engine->IsRunning();
@@ -554,6 +569,8 @@ PK_EXTERN Boolean PKAudioPlayerIsPlaying()
 
 PK_EXTERN Boolean PKAudioPlayerPause(CFErrorRef *outError)
 {
+	CHECK_STATE_INITIALIZED();
+	
 	PKAudioPlayerEngine *engine = AudioPlayerState.engine;
 	
 	if(OSMemoryBarrier(), AudioPlayerState.isPaused)
@@ -587,6 +604,8 @@ PK_EXTERN Boolean PKAudioPlayerPause(CFErrorRef *outError)
 
 PK_EXTERN Boolean PKAudioPlayerResume(CFErrorRef *outError)
 {
+	CHECK_STATE_INITIALIZED();
+	
 	PKAudioPlayerEngine *engine = AudioPlayerState.engine;
 	
 	RBLockableObject::Acquisitor lock(&AudioPlayerStateLock);
@@ -617,6 +636,8 @@ PK_EXTERN Boolean PKAudioPlayerResume(CFErrorRef *outError)
 
 PK_EXTERN Boolean PKAudioPlayerIsPaused()
 {
+	CHECK_STATE_INITIALIZED();
+	
 	return OSMemoryBarrier(), AudioPlayerState.isPaused;
 }
 
@@ -625,11 +646,15 @@ PK_EXTERN Boolean PKAudioPlayerIsPaused()
 
 PK_EXTERN void PKAudioPlayerSetPausesOnOutputDeviceChanges(Boolean pausesOnOutputDeviceChange)
 {
+	CHECK_STATE_INITIALIZED();
+	
 	AudioPlayerState.engine->SetPausesOnOutputDeviceChanges(pausesOnOutputDeviceChange);
 }
 
 PK_EXTERN Boolean PKAudioPlayerGetPausesOnOutputDeviceChanges()
 {
+	CHECK_STATE_INITIALIZED();
+	
 	return AudioPlayerState.engine->GetPausesOnOutputDeviceChanges();
 }
 
@@ -637,6 +662,8 @@ PK_EXTERN Boolean PKAudioPlayerGetPausesOnOutputDeviceChanges()
 
 PK_EXTERN Boolean PKAudioPlayerSetVolume(Float32 volume, CFErrorRef *outError)
 {
+	CHECK_STATE_INITIALIZED();
+	
 	try
 	{
 		AudioPlayerState.engine->SetVolume(volume);
@@ -653,6 +680,8 @@ PK_EXTERN Boolean PKAudioPlayerSetVolume(Float32 volume, CFErrorRef *outError)
 
 PK_EXTERN Float32 PKAudioPlayerGetVolume()
 {
+	CHECK_STATE_INITIALIZED();
+	
 	try
 	{
 		return AudioPlayerState.engine->GetVolume();
@@ -667,6 +696,8 @@ PK_EXTERN Float32 PKAudioPlayerGetVolume()
 
 PK_EXTERN Float32 PKAudioPlayerGetAverageCPUUsage()
 {
+	CHECK_STATE_INITIALIZED();
+	
 	return AudioPlayerState.engine->GetAverageCPUUsage();
 }
 
@@ -674,6 +705,8 @@ PK_EXTERN Float32 PKAudioPlayerGetAverageCPUUsage()
 
 PK_EXTERN CFTimeInterval PKAudioPlayerGetDuration()
 {
+	CHECK_STATE_INITIALIZED();
+	
 	RBLockableObject::Acquisitor lock(&AudioPlayerStateLock);
 	
 	PKDecoder *decoder = AudioPlayerState.decoder;
@@ -687,6 +720,8 @@ PK_EXTERN CFTimeInterval PKAudioPlayerGetDuration()
 
 PK_EXTERN Boolean PKAudioPlayerSetCurrentTime(CFTimeInterval currentTime, CFErrorRef *outError)
 {
+	CHECK_STATE_INITIALIZED();
+	
 	RBLockableObject::Acquisitor lock(&AudioPlayerStateLock);
 	
 	PKAudioPlayerEngine *engine = AudioPlayerState.engine;
@@ -738,6 +773,8 @@ PK_EXTERN Boolean PKAudioPlayerSetCurrentTime(CFTimeInterval currentTime, CFErro
 
 PK_EXTERN CFTimeInterval PKAudioPlayerGetCurrentTime()
 {
+	CHECK_STATE_INITIALIZED();
+	
 	RBLockableObject::Acquisitor lock(&AudioPlayerStateLock);
 	
 	PKDecoder *decoder = AudioPlayerState.decoder;
@@ -745,4 +782,59 @@ PK_EXTERN CFTimeInterval PKAudioPlayerGetCurrentTime()
 		return decoder->GetCurrentFrame() / decoder->GetStreamFormat().mSampleRate;
 	
 	return 0.0;
+}
+
+#pragma mark -
+
+//Derived From <http://vgable.com/blog/2008/09/11/detecting-if-headphones-are-plugged-in/>
+PK_EXTERN PKAudioPlayerOutputDestination PKAudioPlayerGetAudioOutputDestination(CFErrorRef *outError)
+{
+	CHECK_STATE_INITIALIZED();
+	
+	OSStatus error = noErr;
+	UInt32 dataSize = 0;
+	
+	
+	//Get the default output device
+	AudioObjectPropertyAddress outputDeviceAddress = {kAudioHardwarePropertyDefaultOutputDevice, kAudioObjectPropertyScopeGlobal};
+	AudioDeviceID outputDevice = NULL;
+	dataSize = sizeof(outputDevice);
+	error = AudioObjectGetPropertyData(/*inObjectID:*/ kAudioObjectSystemObject, 
+									   /*inAddress:*/ &outputDeviceAddress, 
+									   /*inQualifierDataSize:*/ 0, 
+									   /*inQualifierData:*/ NULL, 
+									   /*ioDataSize:*/ &dataSize, 
+									   /*outData:*/ &outputDevice);
+	if(error != noErr)
+	{
+		if(outError) *outError = PKCopyError(PKPlaybackErrorDomain, 
+											 error, 
+											 NULL, 
+											 CFSTR("Could not find system output device. Error %s (%d)"), CoreAudioGetErrorName(error), error);
+		
+		return kPKAudioPlayerOutputDestinationUnknown;
+	}
+	
+	
+	//Get the data source for the output device
+	AudioObjectPropertyAddress dataSourceAddress = {kAudioDevicePropertyDataSource, kAudioDevicePropertyScopeOutput};
+	UInt32 dataSource = NULL;
+	dataSize = sizeof(dataSource);
+	error = AudioObjectGetPropertyData(/*inObjectID:*/ outputDevice, 
+									   /*inAddress:*/ &dataSourceAddress, 
+									   /*inQualifierDataSize:*/ 0, 
+									   /*inQualifierData:*/ NULL, 
+									   /*ioDataSize:*/ &dataSize, 
+									   /*outData:*/ &dataSource);
+	if(error != noErr)
+	{
+		if(outError) *outError = PKCopyError(PKPlaybackErrorDomain, 
+											 error, 
+											 NULL, 
+											 CFSTR("Could not copy system output device's output destination (data source). Error %s (%d)"), CoreAudioGetErrorName(error), error);
+		
+		return kPKAudioPlayerOutputDestinationUnknown;
+	}
+	
+	return PKAudioPlayerOutputDestination(dataSource);
 }
