@@ -90,8 +90,6 @@ private:
 	
 	/* n/a */	AudioStreamBasicDescription mStreamFormat;
 	
-	/* n/a */	bool mPausesOnOutputDeviceChanges;
-	
 	//Callbacks
 	/* owner */	ErrorHandler mErrorHandler;
 	/* owner */	EndOfPlaybackHandler mEndOfPlaybackHandler;
@@ -225,14 +223,6 @@ public:
 	 @abstract	Get the average CPU usage of the receiver.
 	 */
 	Float32 GetAverageCPUUsage() const throw();
-	
-#pragma mark -
-	
-	//! @abstract	Sets whether or not the receiver should pause when its output device is changed. Default is false.
-	void SetPausesOnOutputDeviceChanges(Boolean pausesOnOutputDeviceChanges) throw();
-	
-	//! @abstract	Returns whether or not the receiver will pause when its output device is changed.
-	bool GetPausesOnOutputDeviceChanges() const throw();
 	
 #pragma mark -
 #pragma mark Handlers

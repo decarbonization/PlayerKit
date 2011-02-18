@@ -197,49 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>1E963D65130DE6A800AA0968</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>CoreAudioErrors.cpp</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>1E963D66130DE6A800AA0968</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>CoreAudioErrors.cpp</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>1E963DB0130DEB4E00AA0968</string>
-						<key>history</key>
-						<array>
-							<string>1E963D67130DE6A800AA0968</string>
-							<string>1E963D68130DE6A800AA0968</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {975, 616}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>280 109 975 657 0 0 1440 878 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -325,7 +283,7 @@
 										</array>
 									</array>
 									<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-									<string>{{0, 261}, {429, 333}}</string>
+									<string>{{0, 207}, {429, 333}}</string>
 								</dict>
 								<key>PBXTopSmartGroupGIDs</key>
 								<array/>
@@ -486,8 +444,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1E963CCB130D8C5F00AA0968</string>
-				<string>1E963CCC130D8C5F00AA0968</string>
+				<string>1E963DB9130DEBD200AA0968</string>
+				<string>1E963DBA130DEBD200AA0968</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -524,10 +482,9 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C530D5B069F1CE1000CFCEE</string>
-		<string>1E963CCD130D8C5F00AA0968</string>
+		<string>1E963DCA130DEC5A00AA0968</string>
+		<string>1E963DBE130DEBF300AA0968</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>1E963D65130DE6A800AA0968</string>
 		<string>/Users/pjm/Documents/Projects/Shippable/PlayerKit/PlayerKit.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -687,7 +644,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PKAudioPlayer.cpp</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -704,8 +661,6 @@
 							<string>118pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -745,7 +700,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>1E963CAA130D8BB600AA0968</string>
+				<string>1E963DBC130DEBD200AA0968</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

@@ -644,22 +644,6 @@ PK_EXTERN Boolean PKAudioPlayerIsPaused()
 #pragma mark -
 #pragma mark Properties
 
-PK_EXTERN void PKAudioPlayerSetPausesOnOutputDeviceChanges(Boolean pausesOnOutputDeviceChange)
-{
-	CHECK_STATE_INITIALIZED();
-	
-	AudioPlayerState.engine->SetPausesOnOutputDeviceChanges(pausesOnOutputDeviceChange);
-}
-
-PK_EXTERN Boolean PKAudioPlayerGetPausesOnOutputDeviceChanges()
-{
-	CHECK_STATE_INITIALIZED();
-	
-	return AudioPlayerState.engine->GetPausesOnOutputDeviceChanges();
-}
-
-#pragma mark -
-
 PK_EXTERN Boolean PKAudioPlayerSetVolume(Float32 volume, CFErrorRef *outError)
 {
 	CHECK_STATE_INITIALIZED();

@@ -213,7 +213,7 @@ OSStatus PKAudioPlayerEngine::DefaultAudioDeviceDidChangeListenerProc(AudioObjec
 			self->StopGraph();
 			
 			self->PauseProcessing();
-			shouldResumeProcessing = !self->mPausesOnOutputDeviceChanges;
+			shouldResumeProcessing = true;
 		}
 		
 		AudioStreamBasicDescription streamFormat = self->GetStreamFormat();
@@ -462,22 +462,6 @@ void *PKAudioPlayerEngine::GetScheduleSliceFunctionHandlerUserData() const throw
 	Acquisitor lock(this);
 	
 	return mScheduleSliceFunctionHandlerUserData;
-}
-
-#pragma mark -
-
-void PKAudioPlayerEngine::SetPausesOnOutputDeviceChanges(Boolean pausesOnOutputDeviceChanges) throw()
-{
-	Acquisitor lock(this);
-	
-	mPausesOnOutputDeviceChanges = pausesOnOutputDeviceChanges;
-}
-
-bool PKAudioPlayerEngine::GetPausesOnOutputDeviceChanges() const throw()
-{
-	Acquisitor lock(this);
-	
-	return mPausesOnOutputDeviceChanges;
 }
 
 #pragma mark -

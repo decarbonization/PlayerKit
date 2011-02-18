@@ -106,14 +106,6 @@ PK_EXTERN Boolean PKAudioPlayerIsPaused();
 #pragma mark -
 #pragma mark Properties
 
-///Sets whether or not the audio player should pause playback when its output device is changed.
-PK_EXTERN void PKAudioPlayerSetPausesOnOutputDeviceChanges(Boolean pausesOnOutputDeviceChange);
-
-///Returns whether or not the audio player will pause playback when its output device is changed.
-PK_EXTERN Boolean PKAudioPlayerGetPausesOnOutputDeviceChanges();
-
-#pragma mark -
-
 ///Set the volume level of the audio player. The scale is {0.0, 1.0}, the default value is 1.0.
 PK_EXTERN Boolean PKAudioPlayerSetVolume(Float32 volume, CFErrorRef *outError);
 
