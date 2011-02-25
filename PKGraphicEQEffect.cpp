@@ -106,3 +106,20 @@ PK_EXTERN AudioUnitParameterValue PKGraphicEQEffectGetValueOfBand(PKGraphicEQEff
 	
 	return value;
 }
+
+PK_EXTERN void PKGraphicEQEffectIterateBands(PKGraphicEQEffectRef effect, void(^iterator)(AudioUnitParameterValue value, CFIndex index, Boolean *stop))
+{
+	if(!effect)
+		return;
+	
+	CFIndex numberOfBands = PKGraphicEQEffectHas32Bands(effect)? 32 : 10;
+	Boolean stop = false;
+	for (CFIndex index = 0; index < numberOfBands; index++)
+	{
+		AudioUnitParameterValue value = PKGraphicEQEffectGetValueOfBand(effect, index);
+		iterator(value, index, &stop);
+		
+		if(stop)
+			break;
+	}
+}

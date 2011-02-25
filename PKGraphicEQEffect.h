@@ -38,4 +38,7 @@ PK_EXTERN Boolean PKGraphicEQEffectSetValueOfBand(PKGraphicEQEffectRef effect, C
 ///Returns the value of a specified band in a graphic EQ effect.
 PK_EXTERN AudioUnitParameterValue PKGraphicEQEffectGetValueOfBand(PKGraphicEQEffectRef effect, CFIndex bandIndex);
 
+///Iterates all of the bands of a graphic EQ effect.
+PK_EXTERN void PKGraphicEQEffectIterateBands(PKGraphicEQEffectRef effect, void(^iterator)(AudioUnitParameterValue value, CFIndex index, Boolean *stop));
+
 #endif /* PKGraphicEQEffect_h */
