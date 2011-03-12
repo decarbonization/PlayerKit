@@ -596,6 +596,7 @@ PK_EXTERN Boolean PKAudioPlayerPause(CFErrorRef *outError)
 			return false;
 		}
 		
+		OSAtomicCompareAndSwap32Barrier(AudioPlayerState.preserveExistingBuffersOnResume, true, &AudioPlayerState.preserveExistingBuffersOnResume);
 		OSAtomicCompareAndSwap32Barrier(AudioPlayerState.isPaused, true, &AudioPlayerState.isPaused);
 	}
 	
@@ -616,7 +617,8 @@ PK_EXTERN Boolean PKAudioPlayerResume(CFErrorRef *outError)
 		
 		try
 		{
-			engine->ResumeProcessing(/* preserveExistingSampleBuffers = */true);
+			OSMemoryBarrier();
+			engine->ResumeProcessing(AudioPlayerState.preserveExistingBuffersOnResume);
 			engine->StartGraph();
 		}
 		catch (RBException e)
@@ -733,6 +735,8 @@ PK_EXTERN Boolean PKAudioPlayerSetCurrentTime(CFTimeInterval currentTime, CFErro
 				
 				engine->StartGraph();
 			}
+			
+			OSAtomicCompareAndSwap32Barrier(AudioPlayerState.preserveExistingBuffersOnResume, false, &AudioPlayerState.preserveExistingBuffersOnResume);
 		}
 		catch (RBException e)
 		{

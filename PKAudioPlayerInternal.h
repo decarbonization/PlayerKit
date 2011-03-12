@@ -28,6 +28,7 @@ typedef struct PKAudioPlayer {
 	//State
 	volatile int32_t isPaused;
 	volatile int32_t hasBroadcastedPresence;
+	volatile int32_t preserveExistingBuffersOnResume;
 	CFStringRef sessionID;
 } PKAudioPlayer;
 
