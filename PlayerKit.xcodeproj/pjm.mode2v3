@@ -195,32 +195,7 @@
 	<key>Name</key>
 	<string>Condensed</string>
 	<key>Notifications</key>
-	<array>
-		<dict>
-			<key>XCObserverAutoDisconnectKey</key>
-			<true/>
-			<key>XCObserverDefintionKey</key>
-			<dict>
-				<key>PBXStatusErrorsKey</key>
-				<integer>0</integer>
-			</dict>
-			<key>XCObserverFactoryKey</key>
-			<string>XCPerspectivesSpecificationIdentifier</string>
-			<key>XCObserverGUIDKey</key>
-			<string>XCObserverProjectIdentifier</string>
-			<key>XCObserverNotificationKey</key>
-			<string>PBXStatusBuildStateMessageNotification</string>
-			<key>XCObserverTargetKey</key>
-			<string>XCMainBuildResultsModuleGUID</string>
-			<key>XCObserverTriggerKey</key>
-			<string>awakenModuleWithObserver:</string>
-			<key>XCObserverValidationKey</key>
-			<dict>
-				<key>PBXStatusErrorsKey</key>
-				<integer>2</integer>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>OpenEditors</key>
 	<array/>
 	<key>PerspectiveWidths</key>
@@ -469,8 +444,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1EF83D85132C1618007FAE96</string>
-				<string>1EF83D86132C1618007FAE96</string>
+				<string>1E25FD1613353B3A00E89D7D</string>
+				<string>1E25FD1713353B3A00E89D7D</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -490,7 +465,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>321656344.31286502</real>
+	<real>0.0</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -507,7 +482,6 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1EF83D88132C1618007FAE96</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>/Users/pjm/Documents/Projects/Shippable/PlayerKit/PlayerKit.xcodeproj</string>
 	</array>
@@ -694,7 +668,7 @@
 								<key>XCBuildResultsTrigger_Collapse</key>
 								<integer>1021</integer>
 								<key>XCBuildResultsTrigger_Open</key>
-								<integer>1012</integer>
+								<integer>1011</integer>
 							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
@@ -724,7 +698,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>1EF83D87132C1618007FAE96</string>
+				<string>1E25FD1813353B3A00E89D7D</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

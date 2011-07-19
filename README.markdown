@@ -6,7 +6,7 @@ PlayerKit is a small framework that provides a solid, extendable playback engine
 
 PlayerKit is released under the terms of the MIT license.
 
-    Copyright (c) 2007-2010 Peter MacWhinnie
+    Copyright (c) 2007-2011 Roundabout Software
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
