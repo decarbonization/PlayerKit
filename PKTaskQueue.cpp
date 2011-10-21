@@ -87,6 +87,7 @@ void PKTaskQueue::StopProcessingThread()
 
 void *PKTaskQueue::ProcessingThreadCallback(PKTaskQueue *self)
 {
+	//Prevent «auto_zone_thread_registration_error» issues caused by `TaskBlockForwarder`.
 	if(objc_registerThreadWithCollector) objc_registerThreadWithCollector();
 	
 	self->Retain();
@@ -151,6 +152,9 @@ void PKTaskQueue::Async(TaskProc proc, void *userInfo)
 	QueuedTask *task = new QueuedTask(proc, userInfo, true);
 	mQueueTasks.push(task);
 	
+	//Prevent «auto_zone_thread_registration_error» issues caused by `RBSemaphore::SignalIf`.
+	if(objc_registerThreadWithCollector) objc_registerThreadWithCollector();
+	
 	mSleepSemaphore.SignalIf(^(int value) { return value > 0; });
 }
 
@@ -179,6 +183,9 @@ void PKTaskQueue::Sync(TaskProc proc, void *userInfo)
 	task->Retain();
 	
 	mQueueTasks.push(task);
+	
+	//Prevent «auto_zone_thread_registration_error» issues caused by `RBSemaphore::SignalIf`.
+	if(objc_registerThreadWithCollector) objc_registerThreadWithCollector();
 	
 	try
 	{

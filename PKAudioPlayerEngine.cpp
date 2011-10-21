@@ -352,7 +352,7 @@ void PKAudioPlayerEngine::ScheduleSlice(PKScheduledDataSlice *slice)
 	}
 }
 
-void PKAudioPlayerEngine::ProcessorDidFinishSlice(PKScheduledDataSlice *dataSlice, ScheduledAudioSlice *bufferList)
+void PKAudioPlayerEngine::ProcessorDidFinishSlice(PKScheduledDataSlice *dataSlice, ScheduledAudioSlice *bufferList) //called on com.apple.audio.IOThread.client
 {
 	PKAudioPlayerEngine *self = dataSlice->mOwner;
 	if(!self->IsRunning() || (self->mProcessingIsPaused && dataSlice->mInvalidated))
@@ -363,7 +363,6 @@ void PKAudioPlayerEngine::ProcessorDidFinishSlice(PKScheduledDataSlice *dataSlic
 	
 	if((bufferList->mFlags & kScheduledAudioSliceFlag_Complete) == kScheduledAudioSliceFlag_Complete)
 	{
-		
 		self->mSchedulerQueue->Async(PKTaskQueue::TaskProc(&PKScheduledDataSlice::ScheduleSliceTaskProxy), dataSlice);
 	}
 }
