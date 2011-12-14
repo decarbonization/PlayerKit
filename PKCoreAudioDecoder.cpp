@@ -92,7 +92,7 @@ PKDecoder::FrameLocation PKCoreAudioDecoder::GetCurrentFrame() const
 
 void PKCoreAudioDecoder::SetCurrentFrame(PKDecoder::FrameLocation currentFrame)
 {
-	if((currentFrame >= 0) && (currentFrame <= this->GetTotalNumberOfFrames()))
+	if(currentFrame <= this->GetTotalNumberOfFrames())
 	{
 		if(ExtAudioFileSeek(mAudioFile, currentFrame) == noErr)
 			mCurrentFrameInFile = currentFrame;

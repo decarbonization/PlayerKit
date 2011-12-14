@@ -67,9 +67,9 @@ PKAudioPlayerEngine::~PKAudioPlayerEngine()
 	//	We don't need notifications anymore.
 	//
 	AudioObjectPropertyAddress address = {
-		mSelector: kAudioHardwarePropertyDefaultOutputDevice, 
-		mScope: kAudioObjectPropertyScopeGlobal, 
-		mElement: 0
+		.mSelector = kAudioHardwarePropertyDefaultOutputDevice, 
+		.mScope = kAudioObjectPropertyScopeGlobal, 
+		.mElement = 0
 	};
 	AudioObjectRemovePropertyListener(kAudioObjectSystemObject, //in audioObjectID
 									  &address, //in propertyAddressPtr
@@ -160,9 +160,9 @@ PKAudioPlayerEngine::PKAudioPlayerEngine() throw(RBException) :
 	//	and pretty much everything else.
 	//
 	AudioObjectPropertyAddress address = {
-		mSelector: kAudioHardwarePropertyDefaultOutputDevice, 
-		mScope: kAudioObjectPropertyScopeGlobal, 
-		mElement: 0
+		.mSelector = kAudioHardwarePropertyDefaultOutputDevice, 
+		.mScope = kAudioObjectPropertyScopeGlobal, 
+		.mElement = 0
 	};
 	error = AudioObjectAddPropertyListener(kAudioObjectSystemObject, //in audioObjectID
 										   &address, //in propertyAddressPtr

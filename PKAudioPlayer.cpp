@@ -277,7 +277,7 @@ static OSStatus PKAudioPlayerConverterCallback(AudioConverterRef inAudioConverte
 static UInt32 PKAudioPlayerScheduleSliceWithConverter(PKAudioPlayerEngine *graph, AudioBufferList *ioBuffer, UInt32 numberOfFramesToRead, CFErrorRef *error, void *userData)
 {
 	UInt32 ioNumberOfFramesForConverter = numberOfFramesToRead;
-	PKAudioPlayerConverterState converterState = { mError: NULL };
+	PKAudioPlayerConverterState converterState = { .mError = NULL };
 	OSStatus errorCode = AudioConverterFillComplexBuffer(AudioPlayerState.decoderConverter, //in audioConverter
 														 PKAudioPlayerConverterCallback, //in inputDataProc
 														 &converterState, //in userData
