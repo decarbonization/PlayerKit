@@ -48,6 +48,14 @@ typedef enum PKAudioPlayerOutputDestination {
 } PKAudioPlayerOutputDestination;
 
 #pragma mark -
+#pragma mark Utilities
+
+///Indicates if the audio player is capable of playing a specified file.
+///	\param	location	The location of the audio file. May be NULL.
+///	\result	true if the audio file can be played; false otherwise.
+PK_EXTERN Boolean PKAudioPlayerCanPlayFileAtLocation(CFURLRef location);
+
+#pragma mark -
 #pragma mark Lifecycle
 
 ///Initialize the audio player's internal state.

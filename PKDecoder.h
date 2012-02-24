@@ -56,6 +56,13 @@ public:
 	 */
 	static PKDecoder *DecoderForURL(CFURLRef location) throw(RBException);
 	
+	/*!
+	 @abstract	Returns a Bool indicating whether or not a specified file can be decoded.
+	 @param		location	The location of the file to find a decoder for. Optional.
+	 @result	true if the `location` can be decoded; false otherwise.
+	 */
+	static bool CanDecodeURL(CFURLRef location) throw(RBException);
+	
 #pragma mark -
 #pragma mark Types
 	

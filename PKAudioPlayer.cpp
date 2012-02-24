@@ -40,6 +40,22 @@ static void PKAudioPlayerDidBroadcastPresence(CFNotificationCenterRef center,
 											  CFDictionaryRef userInfo);
 
 #pragma mark -
+#pragma mark Utilities
+
+Boolean PKAudioPlayerCanPlayFileAtLocation(CFURLRef location)
+{
+	try
+	{
+		return PKDecoder::CanDecodeURL(location);
+	}
+	catch (RBException e)
+	{
+	}
+	
+	return false;
+}
+
+#pragma mark -
 #pragma mark Lifecycle
 
 PK_EXTERN Boolean PKAudioPlayerInit(CFErrorRef *outError)

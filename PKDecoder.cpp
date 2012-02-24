@@ -45,6 +45,19 @@ PKDecoder *PKDecoder::DecoderForURL(CFURLRef location) throw(RBException)
 	return NULL;
 }
 
+bool PKDecoder::CanDecodeURL(CFURLRef location) throw(RBException)
+{
+	std::vector<PKDecoder::Description> &decoders = RegisteredDecoders();
+	for (std::vector<PKDecoder::Description>::const_iterator it = decoders.begin(); it != decoders.end(); it++)
+	{
+		PKDecoder::Description decoder = *it;
+		if(decoder.CanDecode(location))
+			return true;
+	}
+	
+	return false;
+}
+
 #pragma mark -
 #pragma mark Lifetime
 
