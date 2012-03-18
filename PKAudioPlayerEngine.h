@@ -56,6 +56,11 @@ public:
 	typedef void(^OutputDeviceDidChangeHandler)();
 	
 	/*!
+	 @abstract	The prototype a pulse handler block for PKAudioPlayerEngine should conform to.
+	 */
+	typedef void(^PulseHandler)();
+	
+	/*!
 	 @typedef
 	 @abstract		The prototype a schedule slice handler function for PKAudioPlayerEngine should conform to.
 	 @param			graph			The graph which is requesting the slices to be scheduled.
@@ -94,6 +99,7 @@ private:
 	/* owner */	ErrorHandler mErrorHandler;
 	/* owner */	EndOfPlaybackHandler mEndOfPlaybackHandler;
 	/* owner */ OutputDeviceDidChangeHandler mOutputDeviceDidChangeHandler;
+	/* owner */ PulseHandler mPulseHandler;
 	
 	/* owner */	ScheduleSliceFunctionHandler mScheduleSliceFunctionHandler;
 	/* n/a */	void *mScheduleSliceFunctionHandlerUserData;
@@ -116,6 +122,8 @@ private:
 	/* owner */	CFMutableArrayRef mSortedDataSlicesForPausedProcessing;
 	
 	/* owner */	PKTaskQueue *mSchedulerQueue;
+	
+	/* n/a */	int64_t mLastRenderSampleTime;
 	
 #pragma mark Scheduling
 	
@@ -146,6 +154,12 @@ private:
 	 @discussion	This method will appropriately suspend processing and update the default output units stream format to prevent runtime errors.
 	 */
 	static OSStatus DefaultAudioDeviceDidChangeListenerProc(AudioObjectID objectID, UInt32 numberAddresses, const AudioObjectPropertyAddress inAddresses[], void *userData);
+	
+	/*!
+	 @abstract		The render callback proc used to observe rendering of the scheduler audio unit.
+	 @discussion	This method is used to implement the pulse interface.
+	 */
+	static OSStatus RenderObserverCallback(void *userData, AudioUnitRenderActionFlags *ioActionFlags, const AudioTimeStamp *inTimeStamp, UInt32 inBusNumber, UInt32 inNumberFrames, AudioBufferList *ioData);
 	
 	/*!
 	 @abstract		PKScheduledDataSlice is a friend because we like it when it violates our encapsulation.
@@ -227,11 +241,16 @@ public:
 #pragma mark -
 #pragma mark Handlers
 	
-	//! @abstract	Set the error handler used by the receiver.
+	/*!
+	 @abstract		Set the error handler used by the receiver.
+	 @discussion	This handler *may not* throw exceptions.
+	*/
 	void SetErrorHandler(ErrorHandler handler) throw();
 	
 	//! @abstract	Get the error handler used by the receiver.
 	ErrorHandler GetErrorHandler() const throw();
+	
+#pragma mark -
 	
 	//! @abstract	Set the end of playback handler used by the receiver.
 	void SetEndOfPlaybackHandler(EndOfPlaybackHandler handler) throw();
@@ -239,14 +258,35 @@ public:
 	//! @abstract	Get the end of playback handler used by the receiver.
 	EndOfPlaybackHandler GetEndOfPlaybackHandler() const throw();
 	
-	//! @abstract	Set the end of output device changed handler used by the receiver.
+#pragma mark -
+	
+	/*!
+	 @abstract		Set the end of output device changed handler used by the receiver.
+	 @discussion	Any exceptions thrown in the context of this handler will be caught and ignored.
+	*/
 	void SetOutputDeviceDidChangeHandler(OutputDeviceDidChangeHandler handler) throw();
 	
 	//! @abstract	Get the end of output device changed handler used by the receiver.
 	OutputDeviceDidChangeHandler GetOutputDeviceDidChangeHandler() const throw();
 	
+#pragma mark -
 	
-	//! @abstract	Set the schedule slice function handler used by the receiver.
+	/*!
+	 @abstract		Set the pulse handler used by the receiver.
+	 @discussion	The handler will be invoked from a background thread managed by core audio.
+					Any exceptions thrown in the context of this handler will be caught and ignored.
+	 */
+	void SetPulseHandler(PulseHandler handler) throw();
+	
+	//! @abstract	Get the pulse handler used by the receiver.
+	PulseHandler GetPulseHandler() const throw();
+	
+#pragma mark -
+	
+	/*!
+	 @abstract		Set the schedule slice function handler used by the receiver.
+	 @discussion	This handler *may not* throw exceptions.
+	 */
 	void SetScheduleSliceFunctionHandler(ScheduleSliceFunctionHandler handler) throw();
 	
 	//! @abstract	Get the schedule slice function handler used by the receiver.

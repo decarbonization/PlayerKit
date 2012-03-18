@@ -141,4 +141,22 @@ PK_EXTERN CFTimeInterval PKAudioPlayerGetCurrentTime();
 ///Returns the physical destination of audio sent from PKAudioPlayer to the user.
 PK_EXTERN PKAudioPlayerOutputDestination PKAudioPlayerGetAudioOutputDestination(CFErrorRef *outError);
 
+#pragma mark -
+
+///Sets the pulse handler of the audio player.
+///
+///	\param	handler				The handler block of the audio player. May not be NULL.
+///	\param	pulseHandlerQueue	The queue to invoke the handler block on. Defaults to the main queue.
+///	\param	outError			On return, a pointer to an error object indicating if any issues occurred.
+///
+///The pulse is provided as a reliable mechanism to observe the passage of time during playback.
+PK_EXTERN Boolean PKAudioPlayerSetPulseHandler(dispatch_block_t handler, dispatch_queue_t pulseHandlerQueue, CFErrorRef *outError);
+
+///Returns the current pulse handler of the audio player.
+///
+///	\param	outPulseHandlerQueue	On return, this pointer will be set to the queue associated pulse handler. May be NULL.
+///
+///The pulse is provided as a reliable mechanism to observe the passage of time during playback.
+PK_EXTERN dispatch_block_t PKAudioPlayerGetPulseHandler(dispatch_queue_t *outPulseHandlerQueue);
+
 #endif /* PKAudioPlayer_h */

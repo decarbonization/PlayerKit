@@ -30,6 +30,10 @@ typedef struct PKAudioPlayer {
 	volatile int32_t hasBroadcastedPresence;
 	volatile int32_t preserveExistingBuffersOnResume;
 	CFStringRef sessionID;
+	
+	//Pulse
+	dispatch_block_t mPulseHandler;
+	dispatch_queue_t mPulseHandlerQueue;
 } PKAudioPlayer;
 
 ///The singleton instance of the audio player state.

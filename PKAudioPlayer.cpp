@@ -136,6 +136,13 @@ PK_EXTERN Boolean PKAudioPlayerInit(CFErrorRef *outError)
 			
 		});
 		
+		AudioPlayerState.engine->SetPulseHandler(^{
+			
+			if(AudioPlayerState.mPulseHandler)
+				dispatch_async(AudioPlayerState.mPulseHandlerQueue, AudioPlayerState.mPulseHandler);
+			
+		});
+		
 		CFNotificationCenterAddObserver(CFNotificationCenterGetDistributedCenter(), 
 										NULL, 
 										CFNotificationCallback(&PKAudioPlayerDidBroadcastPresence), 
@@ -841,4 +848,47 @@ PK_EXTERN PKAudioPlayerOutputDestination PKAudioPlayerGetAudioOutputDestination(
 	}
 	
 	return PKAudioPlayerOutputDestination(dataSource);
+}
+
+#pragma mark -
+
+PK_EXTERN Boolean PKAudioPlayerSetPulseHandler(dispatch_block_t handler, dispatch_queue_t pulseHandlerQueue, CFErrorRef *outError)
+{
+	try
+	{
+		RBParameterAssert(handler);
+		
+		if(AudioPlayerState.mPulseHandlerQueue)
+		{
+			dispatch_release(AudioPlayerState.mPulseHandlerQueue);
+			AudioPlayerState.mPulseHandlerQueue = NULL;
+		}
+		
+		AudioPlayerState.mPulseHandlerQueue = pulseHandlerQueue ?: dispatch_get_main_queue();
+		
+		
+		if(AudioPlayerState.mPulseHandler)
+		{
+			Block_release(AudioPlayerState.mPulseHandler);
+			AudioPlayerState.mPulseHandler = NULL;
+		}
+		
+		AudioPlayerState.mPulseHandler = Block_copy(handler);
+	}
+	catch (RBException e)
+	{
+		if(outError) *outError = e.CopyError();
+		
+		return false;
+	}
+	
+	return true;
+}
+
+PK_EXTERN dispatch_block_t PKAudioPlayerGetPulseHandler(dispatch_queue_t *outPulseHandlerQueue)
+{
+	if(outPulseHandlerQueue)
+		*outPulseHandlerQueue = AudioPlayerState.mPulseHandlerQueue;
+	
+	return Block_copy(AudioPlayerState.mPulseHandler);
 }

@@ -152,6 +152,11 @@ PKAudioPlayerEngine::PKAudioPlayerEngine() throw(RBException) :
 	//Set aside the scheduled audio player's audio unit
 	mScheduledAudioPlayerUnit = this->GetAudioUnitForNode(mScheduledAudioPlayerNode);
 	
+	//We use a render notification observer to implement the PlayerKit pulse.
+	AudioUnitAddRenderNotify(mScheduledAudioPlayerUnit, //in audioUnit 
+							 &PKAudioPlayerEngine::RenderObserverCallback, //in proc
+							 this); //in userData
+	
 	
 	//
 	//	We observe changes to the default output device because when
@@ -241,6 +246,40 @@ OSStatus PKAudioPlayerEngine::DefaultAudioDeviceDidChangeListenerProc(AudioObjec
 	{
 		std::cerr << "An unknown exception was raised in PKAudioPlayerEngine::DefaultAudioDeviceDidChangeListenerProc." << std::endl;
 		return (-1);
+	}
+	
+	return noErr;
+}
+
+OSStatus PKAudioPlayerEngine::RenderObserverCallback(void *userData, AudioUnitRenderActionFlags *ioActionFlags, const AudioTimeStamp *inTimeStamp, UInt32 inBusNumber, UInt32 inNumberFrames, AudioBufferList *ioData)
+{
+	if(PK_FLAG_IS_SET(*ioActionFlags, kAudioUnitRenderAction_PostRender))
+	{
+		PKAudioPlayerEngine *self = (PKAudioPlayerEngine *)userData;
+		int64_t timeInSeconds = int64_t(inTimeStamp->mSampleTime / self->mStreamFormat.mSampleRate);
+		if(timeInSeconds != self->mLastRenderSampleTime)
+		{
+			self->mLastRenderSampleTime = timeInSeconds;
+			
+			try
+			{
+				if(self->mPulseHandler)
+					self->mPulseHandler();
+			}
+			catch (RBException e)
+			{
+				CFShow(CFSTR("RBException raised in PKAudioPlayerEngine::RenderCallback, reason: "));
+				CFShow(e.GetReason());
+				putc('\n', stderr);
+				
+				return e.GetCode();
+			}
+			catch (...)
+			{
+				std::cerr << "An unknown exception was raised in PKAudioPlayerEngine::RenderCallback." << std::endl;
+				return (-1);
+			}
+		}
 	}
 	
 	return noErr;
@@ -391,6 +430,8 @@ PKAudioPlayerEngine::ErrorHandler PKAudioPlayerEngine::GetErrorHandler() const t
 	return mErrorHandler;
 }
 
+#pragma mark -
+
 void PKAudioPlayerEngine::SetEndOfPlaybackHandler(EndOfPlaybackHandler handler) throw()
 {
 	Acquisitor lock(this);
@@ -411,6 +452,31 @@ PKAudioPlayerEngine::EndOfPlaybackHandler PKAudioPlayerEngine::GetEndOfPlaybackH
 	
 	return mEndOfPlaybackHandler;
 }
+
+#pragma mark -
+
+void PKAudioPlayerEngine::SetPulseHandler(PulseHandler handler) throw()
+{
+	Acquisitor lock(this);
+	
+	if(mPulseHandler)
+	{
+		Block_release(mPulseHandler);
+		mPulseHandler = NULL;
+	}
+	
+	if(handler)
+		mPulseHandler = Block_copy(handler);
+}
+
+PKAudioPlayerEngine::PulseHandler PKAudioPlayerEngine::GetPulseHandler() const throw()
+{
+	Acquisitor lock(this);
+	
+	return mPulseHandler;
+}
+
+#pragma mark -
 
 void PKAudioPlayerEngine::SetOutputDeviceDidChangeHandler(OutputDeviceDidChangeHandler handler) throw()
 {
